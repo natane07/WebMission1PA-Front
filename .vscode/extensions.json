@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "AureliaEffect.aurelia",
+    "msjsdiag.debugger-for-chrome",
+    "EditorConfig.EditorConfig",
+    "christian-kohler.path-intellisense",
+    "behzad88.Aurelia",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "davidanson.vscode-markdownlint",
+    "pkief.material-icon-theme",
+    "ms-vscode.vs-keybindings",
+    "mkaufman.htmlhint"
+  ]
+}

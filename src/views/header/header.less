@@ -1,0 +1,32 @@
+@import '../../styles/theme.less';
+
+.my-header {
+  width: 100%;
+  background-color: @colorset-main;
+  min-height: 3rem;
+  color: @colorset-light0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 0 2rem 0 0;
+}
+
+.logo {
+  order: 1;
+  padding: 15px;
+  align-self: center;
+}
+
+.menu-items {
+  order: 3;
+  align-self: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+}
+
+.connect-btn, .disconnect-btn {
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}

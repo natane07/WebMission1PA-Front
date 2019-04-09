@@ -1,0 +1,8 @@
+{
+  "home": {
+    "introduction": "Bienvenu sur {{appTitle}}!",
+    "subtitle": "Rédigez vos compte rendus en quelques clics !",
+    "featuredTemplates" : "Modèles recommandés",
+    "connect" : "Se connecter"
+  }
+}

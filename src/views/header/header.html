@@ -1,0 +1,11 @@
+<template>
+  <require from="./header.css"></require>
+  <div class="my-header">
+    <img class="logo" src="/images/logo.png">
+    <nav class="menu-items">
+      <a class="disconnect-btn" click.trigger="connection.logoutUser()" if.bind="connection.isUserLoggedIn">
+        Logout ${connection.userName}
+      </a>
+    </nav>
+  </div>
+</template>

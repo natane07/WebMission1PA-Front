@@ -1,0 +1,13 @@
+{
+  "authentication": {
+    "redirectHost": "https://web.lvh.me",
+    "tenantId": "b2abb46d-ac1e-4ba2-8d1f-1392172ab76c",
+    "tenantName": "kisssb2c",
+    "clientId": "3383e366-290d-49ab-8c8c-1a13f64c2eda",
+    "apiScope": "https://kisssb2c.onmicrosoft.com/extranet/user_impersonation",
+    "b2cPolicy": "b2c_1_autoprovisioning"
+  },
+  "api": {
+    "uri": "https://web.lvh.me/api"
+  }
+}

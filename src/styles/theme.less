@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Questrial');
+// colors
+@colorset-main: #5CB85C;
+@colorset-main0: darken(saturate(@colorset-main, 100%), 10%);
+@colorset-main1: darken(@colorset-main0, 15%);
+
+@colorset-dark0: black;
+@colorset-dark1: #333;
+@colorset-dark2: #666;
+@colorset-dark3: #999;
+
+@colorset-light0: #ffffff;
+@colorset-light1: #eee;
+@colorset-light2: #ddd;
+@colorset-light3: #bbb;
+
+@colorset-blue: #336AB2;
+@colorset-blue1: lighten(saturate(@colorset-blue, 15%), 10%);
+
+@colorset-orange: #F59A00;
+
+@colorset-shadow: rgba(0, 0, 0, 0.39);
+
+@colorset-error: rgb(179, 40, 40);
+
+@site-width: 1920px;
+
+@font: 'Questrial', 'sans-serif';
+
+@content-padding: 10px;
+// body
+@body-text-color: #575150;
+@body-background-color: #EDEBE6;
+
+// animations
+@keyframes revealFromLeft {
+    0% {
+        transform: translateX(-1em);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

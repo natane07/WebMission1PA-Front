@@ -1,0 +1,8 @@
+{
+  "home": {
+    "introduction": "Welcome to {{appTitle}}!",
+    "subtitle": "Start writing your minutes quickly with these templates!",
+    "featuredTemplates" : "Featured Templates",
+    "connect" : "Connect"
+  }
+}
