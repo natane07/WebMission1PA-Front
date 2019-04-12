@@ -6,6 +6,9 @@
       <a class="disconnect-btn" click.trigger="connection.logoutUser()" if.bind="connection.isUserLoggedIn">
         Logout ${connection.userName}
       </a>
+      <a class="connect-btn" click.trigger="connection.loginUser()" if.bind="!connection.isUserLoggedIn">
+        Login
+      </a>
     </nav>
   </div>
 </template>

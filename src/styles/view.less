@@ -1,6 +1,8 @@
+@import './theme.less';
+
 .container {
   width: 100%;
-  padding: 1rem 10rem;
+  padding: 1rem 2rem;
   & > * {
     padding: 1rem;
   }
@@ -9,8 +11,8 @@
 .category-title {
     width: 100%;
     border-bottom: 1px solid transparent;
-    border-image: linear-gradient(to right, #ddd, white);
+    border-image: linear-gradient(to right, @colorset-light3, @body-background-color);
     border-image-slice: 1;
     padding-bottom: .75rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
