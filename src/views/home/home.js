@@ -1,7 +1,7 @@
 import { inject } from 'aurelia-framework';
 import { Router } from 'aurelia-router';
 import { Connection } from 'plugin/connection';
-import { APPLICATIONTITLE } from 'config/app-config';
+import { APPLICATIONTITLE, SITEMAP } from 'config/app-config';
 
 @inject(Router, Connection)
 export class Home {
@@ -10,6 +10,10 @@ export class Home {
     this._router = router;
     this.connection = connection;
     this.appTitle = APPLICATIONTITLE;
+  }
+
+  manage() {
+    this._router.navigateToRoute(SITEMAP.pendingArticles);
   }
 
 }

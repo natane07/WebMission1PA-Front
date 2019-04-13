@@ -1,7 +1,7 @@
 <template>
   <require from="./header.css"></require>
   <div class="my-header">
-    <img class="logo" src="/images/logo.png">
+    <img class="logo" src="/images/logo.png" width="100px" height="100px">
     <nav class="menu-items">
       <a class="disconnect-btn" click.trigger="connection.logoutUser()" if.bind="connection.isUserLoggedIn">
         Logout ${connection.userName}
