@@ -2,14 +2,14 @@
   <require from="./home.css"></require>
   <div class="container">
     <h2 class="welcome-message category-title">
-      ${'home.introduction' | t : {appTitle : appTitle}}
+      ${'home.introduction' & t : {appTitle : appTitle}}
     </h2>
     <span class="home-text">
-      ${'home.presentation' | t}
+      ${'home.presentation' & t}
     </span>
     <div class="btn-list" if.bind="connection.isUserLoggedIn">
       <button class="btn btn-primary" click.delegate="manage()">
-        ${'home.manage' | t}
+        ${'home.manage' & t}
       </button>
     </div>
   </div>

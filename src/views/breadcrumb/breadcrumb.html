@@ -1,7 +1,7 @@
 <template>
   <ul class="breadcrumb">
     <li repeat.for="nav of router.navigation">
-      <a href.bind="nav.href">${`breadcrumb.${nav.config.name}` | t}</a>
+      <a href.bind="nav.href">${`breadcrumb.${nav.config.name}` & t}</a>
     </li>
   </ul>
 </template>

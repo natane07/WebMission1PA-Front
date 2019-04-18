@@ -7,5 +7,10 @@
   "breadcrumb": {
     "home": "Home",
     "pending-articles": "Pending Articles"
+  },
+  "header": {
+    "settings": "Settings",
+    "login": "Login",
+    "logout": "Logout"
   }
 }

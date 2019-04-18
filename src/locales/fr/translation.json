@@ -7,5 +7,10 @@
   "breadcrumb": {
     "home": "Accueil",
     "pending-articles": "Articles en attente"
+  },
+  "header": {
+    "settings": "Paramètres",
+    "login": "Connexion",
+    "logout": "Déconnexion"
   }
 }

@@ -2,13 +2,19 @@
   <require from="./header.css"></require>
   <div class="my-header">
     <img class="logo" src="/images/logo.png" width="100px" height="100px">
-    <nav class="menu-items">
-      <a class="disconnect-btn" click.trigger="connection.logoutUser()" if.bind="connection.isUserLoggedIn">
-        Logout ${connection.userName}
+    <div class="flex-align-center" if.bind="!connection.isUserLoggedIn">
+      <a class="connect-btn" click.trigger="connection.loginUser()">
+        ${'header.login' & t}
       </a>
-      <a class="connect-btn" click.trigger="connection.loginUser()" if.bind="!connection.isUserLoggedIn">
-        Login
+    </div>
+    <div class="dropdown flex-align-center" if.bind="connection.isUserLoggedIn">
+      <a class="disconnect-btn">
+        ${connection.userName}
       </a>
-    </nav>
+      <div class="dropdown-content">
+        <a click.trigger="goToSettings()">${'header.settings' & t}</a>
+        <a click.trigger="connection.logoutUser()">${'header.logout' & t}</a>
+      </div>
+    </div>
   </div>
 </template>

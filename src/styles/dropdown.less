@@ -1,0 +1,30 @@
+@import './theme.less';
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  &:hover &-content {
+    display: block;
+  }
+  &-content {
+    border: 1px solid @colorset-dark3;
+    display: none;
+    position: absolute;
+    background-color: @colorset-light1;
+    box-shadow: 0px 8px 16px 0px @colorset-shadow;
+    z-index: 1;
+    right: 0;
+    padding: 0.5rem 0;
+    & a {
+      color: @colorset-dark0;
+      padding: 0.45rem 1rem 0.45rem 1rem;
+      text-decoration: none;
+      display: block;
+      width: 10rem;
+      cursor: pointer;
+      &:hover {
+        background-color: @colorset-light2;
+      }
+    }
+  }
+}
