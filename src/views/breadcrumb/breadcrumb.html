@@ -1,7 +1,8 @@
 <template>
+  <require from="./breadcrumb.css"></require>
   <ul class="breadcrumb">
     <li repeat.for="nav of routes">
-      <a href.bind="nav.href">${`breadcrumb.${nav.config.name}` & t}</a>
+      <a href.bind="nav.href" class.bind="nav.isActive ? 'active' : ''">${`breadcrumb.${nav.config.name}` & t}</a>
     </li>
   </ul>
 </template>
