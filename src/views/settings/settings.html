@@ -1,0 +1,22 @@
+<template>
+  <div class="container">
+    <h1 class="category-title">${'settings.setOptions' & t}</h1>
+    <div class="row">
+      <label>${'settings.language' & t}
+        <select class="input" value.bind="userSettings.language" change.trigger="updateLanguage(userSettings.language)">
+          <option repeat.for="s of settings.language" model.bind="s.code">${s.code} - ${s.description}</option>
+        </select>
+      </label>
+      <label>${'settings.dateFormat' & t}
+        <select class="input" value.bind="userSettings.dateFormat">
+          <option repeat.for="s of settings.dateFormat" model.bind="s" >
+            ${s}
+          </option>
+        </select>
+      </label>
+    </div>
+    <div class="row">
+      <button class="btn btn-primary flex-center-parent" click.trigger="save()">${'settings.save' & t}</button>
+    </div>
+  </div>
+</template>

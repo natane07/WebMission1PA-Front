@@ -12,5 +12,11 @@
     "settings": "Paramètres",
     "login": "Connexion",
     "logout": "Déconnexion"
+  },
+  "settings": {
+    "setOptions": "Définir les paramètres de l'application",
+    "language": "Langue d'affichage",
+    "dateFormat": "Format de date",
+    "save": "Enregistrer"
   }
 }

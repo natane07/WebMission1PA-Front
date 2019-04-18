@@ -1,0 +1,24 @@
+@import './theme.less';
+
+label {
+  display: inline-block;
+}
+
+.input {
+  margin: 0.5rem 0;
+  padding: 0.375rem 0.5rem;
+  border: 1px solid @colorset-blue;
+  font-size: 1rem;
+  line-height: 1.5;
+  vertical-align: middle;
+  width: 100%;
+  &:focus,
+  &:active {
+    outline: 0;
+    box-shadow: none;
+    border-color: @colorset-dark0 !important;
+  }
+  &:hover {
+    border-color: @colorset-dark1;
+  }
+}

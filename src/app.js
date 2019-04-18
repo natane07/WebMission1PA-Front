@@ -5,11 +5,19 @@ import { OpenidRouting } from 'plugin/openid-routing';
 import { Oauth2Interceptor } from 'plugin/oauth2-interceptor';
 import { APPLICATIONTITLE, SITEMAP, ROUTES } from 'config/app-config';
 import { ErrorInterceptor } from 'core/error-interceptor';
+import { UserSettings } from './models/user-settings';
 
 /**
  * Implements the aurelia application for the kis-minutes application.
  */
-@inject(OpenidRouting, AureliaConfiguration, HttpClient, Oauth2Interceptor, ErrorInterceptor)
+@inject(
+  OpenidRouting,
+  AureliaConfiguration,
+  HttpClient,
+  Oauth2Interceptor,
+  ErrorInterceptor,
+  UserSettings
+)
 export class App {
 
   /**
@@ -19,10 +27,28 @@ export class App {
    * @param {HttpClient} client - the fetch http client
    * @param {Oauth2Interceptor} authInterceptor - the authentication fetch interceptor
    * @param {ErrorInterceptor} errorInterceptor - the error fetch interceptor
+   * @param {UserSettings} userSettings - the user options to fetch
    */
-  constructor(openidRouting, aureliaConfiguration, client, authInterceptor, errorInterceptor) {
+  constructor(
+    openidRouting,
+    aureliaConfiguration,
+    client,
+    authInterceptor,
+    errorInterceptor,
+    userSettings
+  ) {
     this._openidRouting = openidRouting;
-    this.httpClient = this.configureHttpClient(client, aureliaConfiguration.get('api.uri'), authInterceptor, errorInterceptor);
+    this.httpClient = this.configureHttpClient(
+      client,
+      aureliaConfiguration.get('api.uri'),
+      authInterceptor,
+      errorInterceptor
+    );
+    this.userSettings = userSettings;
+  }
+
+  async activate() {
+    await this.userSettings.load();
   }
 
   /**

@@ -12,5 +12,11 @@
     "settings": "Settings",
     "login": "Login",
     "logout": "Logout"
+  },
+  "settings": {
+    "setOptions": "Configure application options",
+    "language": "Display language",
+    "dateFormat": "Date Format",
+    "save": "Save"
   }
 }
