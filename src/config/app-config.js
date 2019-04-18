@@ -30,7 +30,7 @@ export const ROUTES = [
     name: SITEMAP.pendingArticles,
     moduleId: 'views/pending-articles/pending-articles',
     title: 'Pending Articles',
-    settings: { breadcrumb: true, order: 0 }
+    settings: { breadcrumb: true, order: 1 }
   },
   {
     route: 'settings',
