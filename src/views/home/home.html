@@ -7,8 +7,10 @@
     <span class="home-text">
       ${'home.presentation' | t}
     </span>
-  </div>
-  <div class="btn-list" if.bind="connection.isUserLoggedIn">
-    <button class="btn btn-primary" click.delegate="manage()">${'home.manage' | t}</button>
+    <div class="btn-list" if.bind="connection.isUserLoggedIn">
+      <button class="btn btn-primary" click.delegate="manage()">
+        ${'home.manage' | t}
+      </button>
+    </div>
   </div>
 </template>

@@ -3,5 +3,9 @@
     "introduction": "Welcome to {{appTitle}}!",
     "presentation": "20 Billions of Pounds of food are wasted every year in France. Fight Food Waste is a non-profit organization aiming to reduce this alarming number. We ensure that nearly expired products are donated to private individuals or other organizations. Everyone can donate products for free: you just need to enter your contact details and submit your products to our application and we will fetch them for you at your home. Help us fight food waste!",
     "manage": "Manage"
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "pending-articles": "Pending Articles"
   }
 }

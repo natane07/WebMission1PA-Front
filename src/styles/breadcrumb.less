@@ -1,5 +1,9 @@
+@import './theme.less';
+
 .breadcrumb {
   white-space: nowrap;
+  margin: 0;
+  padding: 0;
   & li {
     display: inline-block;
     line-height: 26px;
@@ -8,8 +12,8 @@
     position: relative;
     &::before,
     &::after {
-      border-right: 1px solid #666666;
-      content: "";
+      border-right: 1px solid @colorset-dark2;
+      content: '';
       display: block;
       height: 50%;
       position: absolute;
@@ -33,6 +37,7 @@
       font-weight: bold;
       letter-spacing: -1px;
       text-decoration: none;
+      color: @colorset-dark2;
     }
   }
 }

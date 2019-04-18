@@ -15,8 +15,8 @@ export const SITEMAP = {
  * The aurelia routes of the application.
  */
 export const ROUTES = [
-  { route: ['', 'home'], name: SITEMAP.home, moduleId: 'views/home/home', title: 'Home' },
-  { route: 'pending-articles', name: SITEMAP.pendingArticles, moduleId: 'views/pending-articles/pending-articles', title: 'Pending Articles' }
+  { route: ['', 'home'], nav: true, name: SITEMAP.home, moduleId: 'views/home/home', title: 'Home' },
+  { route: 'pending-articles', nav: true, name: SITEMAP.pendingArticles, moduleId: 'views/pending-articles/pending-articles', title: 'Pending Articles' }
 ];
 
 /**

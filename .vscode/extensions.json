@@ -8,8 +8,6 @@
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "davidanson.vscode-markdownlint",
-    "pkief.material-icon-theme",
-    "ms-vscode.vs-keybindings",
     "mkaufman.htmlhint"
   ]
 }

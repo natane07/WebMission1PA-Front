@@ -31,13 +31,13 @@ export class App {
    * @param {Router} router - the aurelia router
    */
   configureRouter(configuration, router) {
+    this.router = router;
     configuration.title = APPLICATIONTITLE;
     configuration.options.pushState = true;
     configuration.options.root = '/';
     configuration.map(ROUTES);
     configuration.fallbackRoute(SITEMAP.home);
     this._openidRouting.configureRouter(configuration);
-    this.router = router;
   }
 
   /**
