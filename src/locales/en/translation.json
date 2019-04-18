@@ -18,5 +18,12 @@
     "language": "Display language",
     "dateFormat": "Date Format",
     "save": "Save"
+  },
+  "articles": {
+    "edit": "Edit",
+    "name": "Name",
+    "actions": "Actions",
+    "loading": "Loading...",
+    "noarticle": "There are no submitted articles left!"
   }
 }

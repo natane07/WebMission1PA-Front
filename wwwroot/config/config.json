@@ -8,6 +8,6 @@
     "b2cPolicy": "b2c_1_autoprovisioning"
   },
   "api": {
-    "uri": "https://web.lvh.me/api"
+    "uri": "https://api.ffw-mission.org"
   }
 }

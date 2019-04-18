@@ -18,5 +18,12 @@
     "language": "Langue d'affichage",
     "dateFormat": "Format de date",
     "save": "Enregistrer"
+  },
+  "articles": {
+    "edit": "Modifier",
+    "name": "Nom",
+    "actions": "Actions",
+    "loading": "Chargement...",
+    "noarticle": "Il n'y a pas de nouveaux articles en cours de validation!"
   }
 }
