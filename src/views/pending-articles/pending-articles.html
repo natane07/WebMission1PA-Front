@@ -1,9 +1,12 @@
 <template>
+  <require from="./pending-articles.css"></require>
   <div class="container">
     <div class="category-title">
       <compose view-model="../breadcrumb/breadcrumb"></compose>
     </div>
-    <button class="btn btn-primary">+ Create Category</button>
+    <div class="row">
+      <button class="btn btn-primary">+ Create Category</button>
+    </div>
     <span if.bind="!articles">${'articles.loading' & t}</span>
     <span if.bind="articles && articles.length === 0">${'articles.noarticle' & t}</span>
     <table class="table" if.bind="articles && articles.length > 0">
@@ -23,8 +26,12 @@
           <td>${article.product_name || 'n/a'}</td>
           <td>${article.labels || 'n/a'}</td>
           <td>TBD</td>
-          <td><button class="btn btn-primary">${'articles.validate' & t}</button></td>
-          <td><button class="btn btn-primary">${'articles.reject' & t}</button></td>
+          <td><i class="size-2">
+              <check></check>
+            </i></td>
+          <td><i class="size-2">
+              <cross></cross>
+            </i></td>
         </tr>
       </tbody>
     </table>

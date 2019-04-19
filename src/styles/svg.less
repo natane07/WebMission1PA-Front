@@ -1,0 +1,14 @@
+@baseWidth: 10px;
+@baseHeight: 10px;
+
+.generate-sizes(5);
+
+.generate-sizes(@n, @i: 1) when (@i =< @n) {
+  .size-@{i} {
+    & svg {
+      width: (@i * @baseWidth);
+      height: (@i * @baseHeight);
+    }
+  }
+  .generate-sizes(@n, (@i + 1));
+}

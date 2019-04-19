@@ -1,6 +1,6 @@
 {
   "tagname-lowercase": true,
-  "attr-lowercase": true,
+  "attr-lowercase": false,
   "attr-value-double-quotes": true,
   "tag-pair": true,
   "spec-char-escape": false,
