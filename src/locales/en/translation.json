@@ -21,8 +21,12 @@
   },
   "articles": {
     "edit": "Edit",
-    "name": "Name",
-    "actions": "Actions",
+    "brands": "Brands",
+    "productName": "Product Name",
+    "labels": "Labels",
+    "categories": "Categories",
+    "validate": "Validate",
+    "reject": "Reject",
     "loading": "Loading...",
     "noarticle": "There are no submitted articles left!"
   }

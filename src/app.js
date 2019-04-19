@@ -80,10 +80,10 @@ export class App {
         .withBaseUrl(apiUri)
         .withDefaults({
           headers: {
-            'Access-Control-Allow-Credentials': 'true',
+            // 'Access-Control-Allow-Credentials': 'true',
             'Accept': 'application/json'
           },
-          credentials: 'include',
+          // credentials: 'include',
           mode: 'cors'
         })
         .rejectErrorResponses()

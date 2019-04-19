@@ -9,7 +9,9 @@ export class PendingArticles {
   }
 
   activate() {
-    this._articleService.getArticles().then(res => (this.articles = res));
+    this._articleService
+      .getArticles()
+      .then(res => (this.articles = res.article));
   }
 
 }

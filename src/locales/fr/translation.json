@@ -21,8 +21,12 @@
   },
   "articles": {
     "edit": "Modifier",
-    "name": "Nom",
-    "actions": "Actions",
+    "brands": "Marques",
+    "productName": "Nom Produit",
+    "labels": "Labels",
+    "categories": "Catégories",
+    "validate": "Valider",
+    "reject": "Rejeter",
     "loading": "Chargement...",
     "noarticle": "Il n'y a pas de nouveaux articles en cours de validation!"
   }
