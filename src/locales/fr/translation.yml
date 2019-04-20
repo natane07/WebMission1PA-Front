@@ -19,6 +19,7 @@ articles:
   brands: Marques
   productName: Nom Produit
   labels: Labels
+  createCategories: + Créer Catégorie
   categories: Catégories
   validate: Valider
   reject: Rejeter
@@ -28,4 +29,4 @@ category:
   title: Créer une nouvelle catégorie
   name: nom
   maxAmount: stockage maximum
-  save: Enregistrer
+  save: Ajouter

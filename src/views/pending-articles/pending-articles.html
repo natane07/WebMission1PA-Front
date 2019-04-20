@@ -4,7 +4,7 @@
       <compose view-model="../breadcrumb/breadcrumb"></compose>
     </div>
     <div class="row">
-      <button class="btn btn-primary">+ Create Category</button>
+      <button class="btn btn-primary">${'articles.createCategories' & t}</button>
     </div>
     <span if.bind="!articles">${'articles.loading' & t}</span>
     <span if.bind="articles && articles.length === 0">${'articles.noarticle' & t}</span>
