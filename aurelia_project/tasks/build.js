@@ -1,10 +1,11 @@
 import gulp from 'gulp';
 import project from '../aurelia.json';
-import {CLIOptions, build as buildCLI} from 'aurelia-cli';
+import { CLIOptions, build as buildCLI } from 'aurelia-cli';
 import transpile from './transpile';
 import processMarkup from './process-markup';
 import processJson from './process-json';
 import processCSS from './process-css';
+import processYaml from './process-yaml';
 import copyFiles from './copy-files';
 import watch from './watch';
 import processCSSSplashscreen from './process-css-splashscreen';
@@ -18,6 +19,7 @@ let build = gulp.series(
     processMarkup,
     processJson,
     processCSS,
+    processYaml,
     copyFiles,
     getKeys
   ),
@@ -27,10 +29,10 @@ let build = gulp.series(
 let main;
 
 if (CLIOptions.taskName() === 'build' && CLIOptions.hasFlag('watch')) {
-  main = gulp.series(
-    build,
-    (done) => { watch(); done(); }
-  );
+  main = gulp.series(build, done => {
+    watch();
+    done();
+  });
 } else {
   main = build;
 }

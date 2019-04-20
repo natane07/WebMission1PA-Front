@@ -41,6 +41,11 @@
       "src/**/*.json"
     ]
   },
+  "yamlProcessor": {
+    "source":  [
+      "src/**/*.yml"
+    ]
+  },
   "unitTestRunner": {
     "source": "test/unit/**/*.js"
   },
