@@ -9,7 +9,8 @@ export const APPLICATIONTITLE = 'Fight-Food-Waste';
 export const SITEMAP = {
   home: 'home',
   pendingArticles: 'pending-articles',
-  settings: 'settings'
+  settings: 'settings',
+  createCategory: 'create-category'
 };
 
 /**
@@ -38,6 +39,13 @@ export const ROUTES = [
     name: SITEMAP.settings,
     moduleId: 'views/settings/settings',
     title: 'User Settings'
+  },
+  {
+    route: 'create-category',
+    nav: true,
+    name: SITEMAP.createCategory,
+    moduleId: 'views/create-category/create-category',
+    title: 'Create Category'
   }
 ];
 

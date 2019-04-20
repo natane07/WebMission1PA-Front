@@ -30,3 +30,20 @@
 .flex-align-center {
   align-self: center;
 }
+
+.grid-row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.generateCols(12);
+
+.generateCols(@n, @i: 1) when (@i <= @n) {
+  .col-start-@{i} {
+    grid-column-start: @i;
+  }
+  .col-end-@{i} {
+    grid-column-end: @i;
+  }
+  .generateCols(@n, (@i + 1));
+}

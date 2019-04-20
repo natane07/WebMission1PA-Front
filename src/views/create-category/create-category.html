@@ -1,0 +1,16 @@
+<template>
+  <div class="container">
+    <h1 class="category-title">${'category.title' & t}</h1>
+    <div class="grid-row">
+      <label class="col-start-3 col-end-6">${'category.name' & t}
+        <input class="input" value.bind="category">
+      </label>
+      <label class="col-start-8 col-end-11">${'category.maxAmount' & t}
+          <input class="input" value.bind="stock">
+      </label>
+    </div>
+    <div class="row">
+      <button class="btn btn-primary flex-center-parent" click.trigger="save()">${'category.save' & t}</button>
+    </div>
+  </div>
+</template>

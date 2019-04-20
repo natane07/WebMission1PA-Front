@@ -1,5 +1,4 @@
 <template>
-  <require from="./pending-articles.css"></require>
   <div class="container">
     <div class="category-title">
       <compose view-model="../breadcrumb/breadcrumb"></compose>
@@ -26,10 +25,10 @@
           <td>${article.product_name || 'n/a'}</td>
           <td>${article.labels || 'n/a'}</td>
           <td>TBD</td>
-          <td><i class="size-2">
+          <td><i class="icon size-2">
               <check></check>
             </i></td>
-          <td><i class="size-2">
+          <td><i class="icon size-2">
               <cross></cross>
             </i></td>
         </tr>

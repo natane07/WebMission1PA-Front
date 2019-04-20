@@ -1,13 +1,13 @@
 <template>
   <div class="container">
     <h1 class="category-title">${'settings.setOptions' & t}</h1>
-    <div class="row">
-      <label>${'settings.language' & t}
+    <div class="grid-row">
+      <label class="col-start-3 col-end-6">${'settings.language' & t}
         <select class="input" value.bind="userSettings.language" change.trigger="updateLanguage(userSettings.language)">
           <option repeat.for="s of settings.language" model.bind="s.code">${s.code} - ${s.description}</option>
         </select>
       </label>
-      <label>${'settings.dateFormat' & t}
+      <label class="col-start-8 col-end-11">${'settings.dateFormat' & t}
         <select class="input" value.bind="userSettings.dateFormat">
           <option repeat.for="s of settings.dateFormat" model.bind="s" >
             ${s}

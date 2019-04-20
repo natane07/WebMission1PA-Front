@@ -29,5 +29,11 @@
     "reject": "Rejeter",
     "loading": "Chargement...",
     "noarticle": "Il n'y a pas de nouveaux articles en cours de validation!"
+  },
+  "category": {
+    "title": "Create new category",
+    "name": "name",
+    "maxAmount": "maximum storage amount",
+    "save": "Save"
   }
 }

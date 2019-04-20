@@ -29,5 +29,11 @@
     "reject": "Reject",
     "loading": "Loading...",
     "noarticle": "There are no submitted articles left!"
+  },
+  "category": {
+    "title": "Create new category",
+    "name": "name",
+    "maxAmount": "maximum storage amount",
+    "save": "Save"
   }
 }
