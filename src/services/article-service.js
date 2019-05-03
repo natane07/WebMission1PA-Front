@@ -1,8 +1,6 @@
 import { inject } from 'aurelia-framework';
 import { HttpClient } from 'aurelia-fetch-client';
-/**
- * Implements the service that encapsulates the kis-minute web api.
- */
+
 @inject(HttpClient)
 export class ArticleService {
 
@@ -13,11 +11,15 @@ export class ArticleService {
 
   constructor(client) {
     this._httpClient = client;
-    this.url = '/article/attenteValidationRecolte';
+    this.url = '/article';
   }
 
   getArticles() {
-    return this._httpClient.fetch(this.url).then(response => response.json());
+    return this._httpClient.fetch(`${this.url}/attenteValidationRecolte`).then(response => response.json());
+  }
+
+  getCategories() {
+    return this._httpClient.fetch(`${this.url}/categories`).then(response => response.json());
   }
 
 }

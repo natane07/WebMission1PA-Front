@@ -1,6 +1,7 @@
 @import './theme.less';
 
 .btn {
+  cursor: pointer;
   display: inline-block;
   font-weight: 400;
   color: transparent;
@@ -12,14 +13,25 @@
   padding: 0.375rem 2rem;
   font-size: 1rem;
   line-height: 1.5;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
   &:focus,
   &:active {
     outline: 0;
     box-shadow: none;
   }
-  &:not(:disabled) {
-    cursor: pointer;
+}
+
+.btn-disabled {
+    cursor: not-allowed !important;
+    color: @colorset-light0;
+    background-color: @colorset-dark2;
+    border-color: @colorset-dark2;
+  &:focus,
+  &:active {
+    color: @colorset-light0;
+    background-color: @colorset-dark2;
+    border-color: @colorset-dark2;
   }
 }
 
@@ -27,7 +39,8 @@
   color: @colorset-light0;
   background-color: @colorset-blue;
   border-color: @colorset-blue;
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-color: @colorset-blue1;
     border-color: @colorset-dark0;
   }

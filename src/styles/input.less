@@ -11,6 +11,7 @@ label {
   font-size: 1rem;
   line-height: 1.5;
   vertical-align: middle;
+  background-color: @colorset-light0;
   width: 100%;
   &:focus,
   &:active {
@@ -20,5 +21,17 @@ label {
   }
   &:hover {
     border-color: @colorset-dark1;
+  }
+  &-danger {
+    border-color: @colorset-error;
+  }
+}
+
+.form-error {
+  padding-inline-start: 0;
+  & > li {
+    text-align: center;
+    list-style: none;
+    color: @colorset-error;
   }
 }

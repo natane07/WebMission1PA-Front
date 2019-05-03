@@ -16,6 +16,7 @@ export function configure(aurelia) {
   aurelia.use
     .standardConfiguration()
     .feature('resources')
+    .plugin(PLATFORM.moduleName('aurelia-validation'))
     .plugin(PLATFORM.moduleName('aurelia-configuration'))
     .plugin('./plugin/index', () => configureOpenidPlugin(aurelia))
     .plugin(PLATFORM.moduleName('aurelia-i18n'), instance => {

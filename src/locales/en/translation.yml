@@ -30,3 +30,8 @@ category:
   name: name
   maxAmount: maximum storage
   save: Add
+errors:
+  required: is required!
+  nan: must be a valid integer!
+  minLength: is too short!
+  maxLength: is too long!

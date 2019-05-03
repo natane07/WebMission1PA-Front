@@ -1,6 +1,6 @@
 home:
-  introduction: Bienvenue sur {{appTitle}}!
-  presentation: "9 Tonnes de nourriture sont gâchées chaque année en France. Fight Food Waste est une organisation à but non lucratif visant à réduire ce chiffre alarmant. Nous faisons en sorte que les produits en phase d'expiration soient donnés à des particuliers ou à d'autres associations. Tout le monde peut donner ses produits: il suffit d'entrer ses coordonnées et soumettre ses produits à notre application et nous irons les récupérer chez vous pour vous. Aidez-nous à combattre le gâchis de nourriture!"
+  introduction: Bienvenue sur {{appTitle}} !
+  presentation: "9 Tonnes de nourriture sont gâchées chaque année en France. Fight Food Waste est une organisation à but non lucratif visant à réduire ce chiffre alarmant. Nous faisons en sorte que les produits en phase d'expiration soient donnés à des particuliers ou à d'autres associations. Tout le monde peut donner ses produits: il suffit d'entrer ses coordonnées et soumettre ses produits à notre application et nous irons les récupérer chez vous pour vous. Aidez-nous à combattre le gâchis de nourriture !"
   manage: Gérer
 breadcrumb:
   home: Accueil
@@ -24,9 +24,14 @@ articles:
   validate: Valider
   reject: Rejeter
   loading: Chargement...
-  noarticle: Il n'y a pas de nouveaux articles en cours de validation!
+  noarticle: Il n'y a pas de nouveaux articles en cours de validation !
 category:
   title: Créer une nouvelle catégorie
   name: nom
   maxAmount: stockage maximum
   save: Ajouter
+errors:
+  required: est requis !
+  nan: doit être un entier valide !
+  minLength: est trop court !
+  maxLength: est trop long !

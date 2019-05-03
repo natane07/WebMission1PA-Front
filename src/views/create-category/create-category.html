@@ -1,16 +1,33 @@
 <template>
   <div class="container">
     <h1 class="category-title">${'category.title' & t}</h1>
-    <div class="grid-row">
-      <label class="col-start-3 col-end-6">${'category.name' & t}
-        <input class="input" value.bind="category">
+    <form class="grid-row">
+      <label class="col-start-3 col-end-6" validation-errors.bind="categoryErrors">${'category.name' & t}
+        <input class.bind="categoryErrors.length ? 'input input-danger' : 'input'" value.bind="category & validate">
+        <ul if.bind="categoryErrors" class="form-error">
+          <li repeat.for="error of categoryErrors">
+            ${error.error.message}
+          </li>
+        </ul>
       </label>
-      <label class="col-start-8 col-end-11">${'category.maxAmount' & t}
-          <input class="input" value.bind="stock">
+      <label class="col-start-8 col-end-11" validation-errors.bind="stockErrors">${'category.maxAmount' & t}
+        <input class.bind="stockErrors.length ? 'input input-danger' : 'input'" value.bind="stock & validate">
+        <ul if.bind="stockErrors" class="form-error">
+          <li repeat.for="error of stockErrors">
+            ${error.error.message}
+          </li>
+        </ul>
+      </label>
+    </form>
+    <div class="grid-row" if.bind="similarCategories.length > 0">
+      <label class="col-start-5 col-end-9">similar existing categories
+        <ul class="list">
+          <li repeat.for="c of similarCategories | take:10">${c.type_article}</li>
+        </ul>
       </label>
     </div>
     <div class="row">
-      <button class="btn btn-primary flex-center-parent" click.trigger="save()">${'category.save' & t}</button>
+      <button class.bind="controller.errors.length ? 'btn btn-disabled flex-center-parent' : 'btn btn-primary flex-center-parent'" click.trigger="save()">${'category.save' & t}</button>
     </div>
   </div>
 </template>

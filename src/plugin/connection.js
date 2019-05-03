@@ -39,7 +39,8 @@ export class Connection {
    * @param {string} route - the aurelia route name that initiates the user connection
    */
   async loginUser(route) {
-    const redirectRoute = route || getCurrentRouteInfo(this._router.currentInstruction);
+    const redirectRoute =
+      route || getCurrentRouteInfo(this._router.currentInstruction);
     try {
       Log.info(`Connection.loginUser: starting signin redirection with ${redirectRoute}...`);
       await this._userManager.signinRedirect({ state: redirectRoute });
@@ -53,7 +54,8 @@ export class Connection {
    * @param {string} route - the aurelia route name that initiates the user deconnection
    */
   async logoutUser(route) {
-    const redirectRoute = route || getCurrentRouteInfo(this._router.currentInstruction);
+    const redirectRoute =
+      route || getCurrentRouteInfo(this._router.currentInstruction);
     try {
       Log.info(`Connection.logoutUser: starting signout redirection with ${redirectRoute}...`);
       await this._userManager.signoutRedirect({ state: redirectRoute });
@@ -67,7 +69,8 @@ export class Connection {
    * @param {string} route - the aurelia route name that initiates the silent user connection
    */
   async trySilentLogin(route) {
-    const redirectRoute = route || getCurrentRouteInfo(this._router.currentInstruction);
+    const redirectRoute =
+      route || getCurrentRouteInfo(this._router.currentInstruction);
     try {
       Log.info(`Connection.trySilentLogin: starting silent signin redirection with ${redirectRoute}...`);
       await this._userManager.signinSilent({ state: redirectRoute });
@@ -121,12 +124,7 @@ export class Connection {
    */
   @computedFrom('user')
   get userName() {
-    const profile = this.user?.profile;
-    // eslint-disable-next-line camelcase
-    const firstName = profile?.given_name || '';
-    // eslint-disable-next-line camelcase
-    const lastName = profile?.family_name || '';
-    return firstName !== '' ? `${firstName} ${lastName}` : lastName;
+    return this.user?.profile?.name;
   }
 
 }
