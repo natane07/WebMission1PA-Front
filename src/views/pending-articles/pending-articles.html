@@ -24,12 +24,14 @@
           <td>${article.brands || 'n/a'}</td>
           <td>${article.product_name || 'n/a'}</td>
           <td>${article.labels || 'n/a'}</td>
-          <td>TBD</td>
+          <td><select if.bind="categories" class="input" value.bind="article.category">
+              <option repeat.for="category of categories" model.bind="category.id">${category.type_article}</option>
+            </select></td>
           <td><i class="icon size-2">
-              <check></check>
+              <check click.trigger="validateArticle(article)"></check>
             </i></td>
           <td><i class="icon size-2">
-              <cross></cross>
+              <cross click.trigger="rejectArticle(article)"></cross>
             </i></td>
         </tr>
       </tbody>
