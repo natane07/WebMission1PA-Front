@@ -20,18 +20,18 @@
     outline: 0;
     box-shadow: none;
   }
-}
-
-.btn-disabled {
+  &:disabled {
     cursor: not-allowed !important;
     color: @colorset-light0;
     background-color: @colorset-dark2;
     border-color: @colorset-dark2;
+  }
+  &:disabled,
   &:focus,
   &:active {
-    color: @colorset-light0;
-    background-color: @colorset-dark2;
-    border-color: @colorset-dark2;
+    color: @colorset-light0 !important;
+    background-color: @colorset-dark2 !important;
+    border-color: @colorset-dark2 !important;
   }
 }
 

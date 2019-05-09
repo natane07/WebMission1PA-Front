@@ -22,4 +22,11 @@ export class ArticleService {
     return this._httpClient.fetch(`${this.url}/categories`).then(response => response.json());
   }
 
+  postCategory(category) {
+    return this._httpClient.fetch(`${this.url}/createCategorie`, {
+      method: 'post',
+      body: JSON.stringify(category)
+    }).then(response => response.json());
+  }
+
 }
