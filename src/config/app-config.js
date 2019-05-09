@@ -10,7 +10,8 @@ export const SITEMAP = {
   home: 'home',
   pendingArticles: 'pending-articles',
   settings: 'settings',
-  createCategory: 'create-category'
+  createCategory: 'create-category',
+  gathering: 'gathering'
 };
 
 /**
@@ -22,7 +23,7 @@ export const ROUTES = [
     nav: true,
     name: SITEMAP.home,
     moduleId: 'views/home/home',
-    title: 'Home',
+    title: 'routes.home',
     settings: { breadcrumb: true, order: 0 }
   },
   {
@@ -30,7 +31,7 @@ export const ROUTES = [
     nav: true,
     name: SITEMAP.pendingArticles,
     moduleId: 'views/pending-articles/pending-articles',
-    title: 'Pending Articles',
+    title: 'routes.pending-articles',
     settings: { breadcrumb: true, order: 1 }
   },
   {
@@ -38,14 +39,22 @@ export const ROUTES = [
     nav: true,
     name: SITEMAP.settings,
     moduleId: 'views/settings/settings',
-    title: 'User Settings'
+    title: 'routes.settings'
   },
   {
     route: 'create-category',
     nav: true,
     name: SITEMAP.createCategory,
     moduleId: 'views/create-category/create-category',
-    title: 'Create Category'
+    title: 'routes.create-category'
+  },
+  {
+    route: 'gathering',
+    nav: true,
+    name: SITEMAP.gathering,
+    moduleId: 'views/gathering/gathering',
+    title: 'routes.gathering',
+    settings: { breadcrumb: true, order: 2 }
   }
 ];
 

@@ -5,6 +5,8 @@ import 'regenerator-runtime/runtime';
 import { TCustomAttribute } from 'aurelia-i18n';
 import Backend from 'i18next-xhr-backend';
 import moment from 'moment';
+import { AppRouter } from 'aurelia-router';
+import { EventAggregator } from 'aurelia-event-aggregator';
 
 import environment from './environment';
 import configureOpenidPlugin from 'config/openid-config';
@@ -27,15 +29,24 @@ export function configure(aurelia) {
         moment.locale(lng);
       });
 
-      return instance.setup({
-        backend: {
-          loadPath: './locales/{{lng}}/{{ns}}.json'
-        },
-        attributes: aliases,
-        lng: 'en',
-        fallbackLng: 'en',
-        debug: true
-      });
+      return instance
+        .setup({
+          backend: {
+            loadPath: './locales/{{lng}}/{{ns}}.json'
+          },
+          attributes: aliases,
+          lng: 'en',
+          fallbackLng: 'en',
+          debug: true
+        })
+        .then(() => {
+          const router = aurelia.container.get(AppRouter);
+          router.transformTitle = title => instance.tr(title);
+          const eventAggregator = aurelia.container.get(EventAggregator);
+          eventAggregator.subscribe('i18n:locale:changed', () => {
+            router.updateTitle();
+          });
+        });
     });
 
   aurelia.use.developmentLogging(environment.debug ? 'debug' : 'warn');
