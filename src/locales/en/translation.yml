@@ -42,3 +42,5 @@ errors:
   nan: must be a valid integer!
   minLength: is too short!
   maxLength: is too long!
+gathering:
+  createGathering: + Create Gathering

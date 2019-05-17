@@ -1,0 +1,31 @@
+<template>
+  <require from="./arrow-list.css"></require>
+  <div class="arrow-list">
+    <table class="col-start-4 col-end-6 row-start-2 row-end-6">
+      <tr repeat.for="s of source">
+        <td click.trigger="select(s)" class.bind="selectedItem === s ? 'selected' : ''">${s}</td>
+      </tr>
+    </table>
+    <div class="switch-buttons col-start-6 col-end-8 row-start-2 row-end-6">
+      <button class="btn btn-outline-primary" innerhtml.bind="'<<'"></button>
+      <button class="btn btn-outline-primary" innerhtml.bind="'>>'"></button>
+    </div>
+    <table class="col-start-8 col-end-10 row-start-2 row-end-6">
+      <tr>
+        <td>toto</td>
+      </tr>
+      <tr>
+        <td>toto</td>
+      </tr>
+      <tr>
+        <td>toto</td>
+      </tr>
+      <tr>
+        <td>toto</td>
+      </tr>
+      <tr>
+        <td>toto</td>
+      </tr>
+    </table>
+  </div>
+</template>

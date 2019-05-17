@@ -1,0 +1,29 @@
+@import '../../../styles/theme.less';
+
+.arrow-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  & > table {
+    cursor: pointer;
+    width: 100%;
+    min-height: 10rem;
+    border: 1px solid @colorset-blue;
+    text-align: center;
+    background-color: @colorset-light0;
+    padding: 0;
+    & .selected {
+      background-color: @colorset-light2;
+    }
+  }
+  & > .switch-buttons {
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    justify-content: space-around;
+    & > button {
+      align-self: center;
+    }
+  }
+}

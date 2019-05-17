@@ -57,4 +57,10 @@ export class ArticleService {
       .then(response => response.json());
   }
 
+  getValidatedArticles() {
+    return this._httpClient
+      .fetch(`${this.url}/attenteRecolte`)
+      .then(response => response.json());
+  }
+
 }

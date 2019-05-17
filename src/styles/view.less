@@ -47,3 +47,15 @@
   }
   .generateCols(@n, (@i + 1));
 }
+
+.generateRows(12);
+
+.generateRows(@n, @i: 1) when (@i <= @n) {
+  .row-start-@{i} {
+    grid-row-start: @i;
+  }
+  .row-end-@{i} {
+    grid-row-end: @i;
+  }
+  .generateRows(@n, (@i + 1));
+}

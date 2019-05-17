@@ -42,3 +42,5 @@ errors:
   nan: doit être un entier valide !
   minLength: est trop court !
   maxLength: est trop long !
+gathering:
+  createGathering: + Créer Collecte
