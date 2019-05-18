@@ -4,8 +4,6 @@ import { ArticleService } from 'services/article-service';
 @inject(ArticleService)
 export class Gathering {
 
-  articles = ['toto'];
-
   constructor(articleService) {
     this._articleService = articleService;
   }
@@ -18,7 +16,7 @@ export class Gathering {
 
   setArticles(articles) {
     this.articles = articles;
-    console.log(articles);
+    this.articleNames = articles.map(a => a.product_name);
   }
 
 }
