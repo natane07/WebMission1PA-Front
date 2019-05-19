@@ -16,7 +16,7 @@ export class ArticleService {
 
   getArticles() {
     return this._httpClient
-      .fetch(`${this.url}/attenteValidationRecolte`)
+      .fetch(`${this.url}/attente/recolte/validation`)
       .then(response => response.json());
   }
 
@@ -28,7 +28,7 @@ export class ArticleService {
 
   postCategory(category) {
     return this._httpClient
-      .fetch(`${this.url}/createCategorie`, {
+      .fetch(`${this.url}/categorie`, {
         method: 'post',
         body: JSON.stringify(category)
       })
@@ -37,7 +37,7 @@ export class ArticleService {
 
   validateArticle(article) {
     return this._httpClient
-      .fetch(`${this.url}/validateArticle`, {
+      .fetch(`${this.url}/validate`, {
         method: 'post',
         body: JSON.stringify({
           article: { id: article.id, id_CATEGORIES: article.category }
@@ -48,7 +48,7 @@ export class ArticleService {
 
   rejectArticle(article) {
     return this._httpClient
-      .fetch(`${this.url}/declineArticle`, {
+      .fetch(`${this.url}/decline`, {
         method: 'post',
         body: JSON.stringify({
           article: { id: article.id }
@@ -59,7 +59,7 @@ export class ArticleService {
 
   getValidatedArticles() {
     return this._httpClient
-      .fetch(`${this.url}/attenteRecolte`)
+      .fetch(`${this.url}/attente/recolte`)
       .then(response => response.json());
   }
 
