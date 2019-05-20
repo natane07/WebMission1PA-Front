@@ -32,6 +32,7 @@ articles:
   reject: Rejeter
   loading: Chargement...
   noarticle: Il n'y a pas de nouveaux articles en cours de validation !
+  nocategory: Vous devez associer une catégorie au produit avant de le valider !
 category:
   title: Créer une nouvelle catégorie
   name: nom
@@ -50,3 +51,7 @@ gathering:
 error:
   title: Erreur
   defaultMessage: Une erreur de communication s'est produite.
+warning:
+  title: Alerte
+info:
+  title: Information

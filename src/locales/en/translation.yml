@@ -32,6 +32,7 @@ articles:
   reject: Reject
   loading: Loading...
   noarticle: There are no submitted articles left!
+  nocategory: You must associate a category to the product before submitting it!
 category:
   title: Create new category
   name: name
@@ -50,3 +51,7 @@ gathering:
 error:
   title: Error
   defaultMessage: A communication error has occured.
+warning:
+  title: Warning
+info:
+  title: Info
