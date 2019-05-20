@@ -1,6 +1,7 @@
 <template>
   <require from="./arrow-list.css"></require>
-  <div class="arrow-list" if.bind="source && source.length > 0">
+  <div class="arrow-list" if.bind="source && (source.length > 0 || destination.length > 0)">
+    <label class="col-start-4 col-end-6 row-start-1 row-end-2">${sourceName}</label>
     <table class="col-start-4 col-end-6 row-start-2 row-end-6">
       <tr repeat.for="item of source">
         <td click.trigger="select($index, source)"
@@ -13,6 +14,7 @@
       <button class="btn btn-outline-primary" click.trigger="move(destination, source)" innerhtml.bind="'<<'"></button>
       <button class="btn btn-outline-primary" click.trigger="move(source, destination)" innerhtml.bind="'>>'"></button>
     </div>
+    <label class="col-start-8 col-end-10 row-start-1 row-end-2">${destinationName}</label>
     <table class="col-start-8 col-end-10 row-start-2 row-end-6">
       <tr repeat.for="item of destination">
         <td click.trigger="select($index, destination)"

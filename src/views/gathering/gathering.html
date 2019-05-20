@@ -22,7 +22,8 @@
         </select>
       </label>
     </div>
-    <arrow-list source.bind="articles" destination.bind="validatedArticles">
+    <arrow-list source.bind="articles" destination.bind="validatedArticles"
+      source-name.bind="_i18n.tr('gathering.available')" destination-name.bind="_i18n.tr('gathering.affected')">
       <template replace-part="items">
         <span>${item.product_name}</span>
       </template>

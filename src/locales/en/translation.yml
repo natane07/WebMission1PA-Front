@@ -49,6 +49,8 @@ gathering:
   gathering: Gathering
   save: Validate Gathering
   nocollecte: Please select a valid gathering and a storage address!
+  affected: Affected articles
+  available: Available articles
 error:
   title: Error
   defaultMessage: A communication error has occured.

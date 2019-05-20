@@ -5,9 +5,11 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  & > table {
+  & table {
+    margin-top: .5rem;
     cursor: pointer;
     width: 100%;
+    min-height: 5rem;
     border: 1px solid @colorset-blue;
     text-align: center;
     background-color: @colorset-light0;

@@ -4,6 +4,8 @@ import { BindingSignaler } from 'aurelia-templating-resources';
 @inject(BindingSignaler)
 export class ArrowListCustomElement {
 
+  @bindable sourceName = '';
+  @bindable destinationName = '';
   @bindable source = [];
   @bindable destination = [];
   selectedItem = null;
