@@ -44,3 +44,6 @@ errors:
   maxLength: est trop long !
 gathering:
   createGathering: + Créer Collecte
+  storage: Stockage
+  gathering: Collecte
+  save: Valider Collecte

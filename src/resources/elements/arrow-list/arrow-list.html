@@ -2,8 +2,11 @@
   <require from="./arrow-list.css"></require>
   <div class="arrow-list" if.bind="source && source.length > 0">
     <table class="col-start-4 col-end-6 row-start-2 row-end-6">
-      <tr repeat.for="s of source">
-        <td click.trigger="select($index, source)" class.bind="isSelected($index, source) ? 'selected' : '' & signal:'signal'">${s}</td>
+      <tr repeat.for="item of source">
+        <td click.trigger="select($index, source)"
+          class.bind="isSelected($index, source) ? 'selected' : '' & signal:'signal'">
+          <span replaceable part="items">${item.toString()}</span>
+        </td>
       </tr>
     </table>
     <div class="switch-buttons col-start-6 col-end-8 row-start-2 row-end-6">
@@ -11,8 +14,11 @@
       <button class="btn btn-outline-primary" click.trigger="move(source, destination)" innerhtml.bind="'>>'"></button>
     </div>
     <table class="col-start-8 col-end-10 row-start-2 row-end-6">
-      <tr repeat.for="d of destination">
-        <td click.trigger="select($index, destination)" class.bind="isSelected($index, destination) ? 'selected' : '' & signal:'signal'">${d}</td>
+      <tr repeat.for="item of destination">
+        <td click.trigger="select($index, destination)"
+          class.bind="isSelected($index, destination) ? 'selected' : '' & signal:'signal'">
+          <span replaceable part="items">${item.toString()}</span>
+        </td>
       </tr>
     </table>
   </div>

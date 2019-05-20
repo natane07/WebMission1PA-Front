@@ -3,9 +3,33 @@
     <div class="category-title">
       <compose view-model="../breadcrumb/breadcrumb"></compose>
     </div>
+    <div class="row">
+      <button class="btn btn-primary flex-center-parent">${'gathering.createGathering' & t}</button>
+    </div>
+    <div class="grid-row">
+      <label class="col-start-3 col-end-6">${'gathering.gathering' & t}
+        <select class="input" value.bind="gathering.id">
+          <option repeat.for="g of gatherings" model.bind="g.id">
+            ${g.name} ${g.date_start | date:userSettings.dateFormat}
+          </option>
+        </select>
+      </label>
+      <label class="col-start-8 col-end-11">${'gathering.storage' & t}
+        <select class="input" value.bind="gathering.data.id_addresse_stockage">
+          <option repeat.for="s of storages" model.bind="s.id">
+            ${s.adresse}
+          </option>
+        </select>
+      </label>
+    </div>
+    <arrow-list source.bind="articles" destination.bind="validatedArticles">
+      <template replace-part="items">
+        <span>${item.product_name}</span>
+      </template>
+    </arrow-list>
+    <div class="row">
+      <button class="btn btn-primary flex-center-parent" click.trigger="validateGathering()">
+        ${'gathering.save' & t}</button>
+    </div>
   </div>
-  <div class="row">
-    <button class="btn btn-primary flex-center-parent">${'gathering.createGathering' & t}</button>
-  </div>
-  <arrow-list source.bind="articleNames"></arrow-list>
 </template>

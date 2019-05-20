@@ -10,7 +10,7 @@ import { EventAggregator } from 'aurelia-event-aggregator';
 
 import environment from './environment';
 import configureOpenidPlugin from 'config/openid-config';
-import { TOASTSETTINGS } from 'config/app-config';
+import { TOASTSETTINGS, APPLICATIONTITLE } from 'config/app-config';
 
 import izitoast from 'izitoast';
 
@@ -41,7 +41,7 @@ export function configure(aurelia) {
         })
         .then(() => {
           const router = aurelia.container.get(AppRouter);
-          router.transformTitle = title => instance.tr(title);
+          router.transformTitle = title => title !== APPLICATIONTITLE ? instance.tr(title) : APPLICATIONTITLE;
           const eventAggregator = aurelia.container.get(EventAggregator);
           eventAggregator.subscribe('i18n:locale:changed', () => {
             router.updateTitle();

@@ -5,6 +5,7 @@ export function configure(config) {
     './elements/svg/arrow-left.html',
     './elements/svg/arrow-right.html',
     './value-converters/take',
+    './value-converters/date',
     './elements/arrow-list/arrow-list'
   ]);
 }
