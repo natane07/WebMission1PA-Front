@@ -9,7 +9,7 @@
     </div>
     <div class="dropdown flex-align-center" if.bind="connection.isUserLoggedIn">
       <a class="disconnect-btn">
-        ${connection.userName}
+        ${connection.userName || 'n/a'}
       </a>
       <div class="dropdown-content">
         <a click.trigger="goToSettings()">${'header.settings' & t}</a>

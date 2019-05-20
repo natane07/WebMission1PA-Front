@@ -1,9 +1,7 @@
 import { inject } from 'aurelia-framework';
 import { HttpClient } from 'aurelia-fetch-client';
-import { Toastr } from 'core/toastr';
-import { I18N } from 'aurelia-i18n';
 
-@inject(HttpClient, Toastr, I18N)
+@inject(HttpClient)
 export class ArticleService {
 
   /**
@@ -11,11 +9,9 @@ export class ArticleService {
    * @param {HttpClient} client - the fetch http client
    */
 
-  constructor(client, toastr, i18n) {
+  constructor(client) {
     this._httpClient = client;
     this.url = '/article';
-    this._toastr = toastr;
-    this._i18n = i18n;
   }
 
   getArticles() {
@@ -40,9 +36,6 @@ export class ArticleService {
   }
 
   validateArticle(article) {
-    if (!article.category) {
-      return this._toastr.error(this._i18n.tr('articles.nocategory'));
-    }
     return this._httpClient
       .fetch(`${this.url}/validate`, {
         method: 'post',

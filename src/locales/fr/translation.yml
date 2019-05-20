@@ -48,6 +48,7 @@ gathering:
   storage: Stockage
   gathering: Collecte
   save: Valider Collecte
+  nocollecte: Veuillez sélectionner une collecte et une adresse de stockage valide !
 error:
   title: Erreur
   defaultMessage: Une erreur de communication s'est produite.
