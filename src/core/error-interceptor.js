@@ -1,15 +1,17 @@
 import iziToast from 'izitoast';
-
+import { inject } from 'aurelia-framework';
+import { I18N } from 'aurelia-i18n';
 import environment from 'environment';
 
-const popupTitle = 'Erreur';
-const defaultErrorMessage = "Une erreur de communication s'est produite.";
-
 /**
- * Implements a custom interceptor that shows an izitoast error popup when
- * an http error occurs.
+ * Implements a custom interceptor that shows an izitoast error popup when an http error occurs.
  */
+@inject(I18N)
 export class ErrorInterceptor {
+
+  constructor(i18n) {
+    this._i18n = i18n;
+  }
 
   /**
    * Intercepts and handles the response error.
@@ -17,32 +19,45 @@ export class ErrorInterceptor {
    */
   async responseError(responseError) {
     if (responseError.status !== 401) {
-      showApiError(responseError);
+      this.showApiError(responseError);
     }
     throw responseError;
   }
 
-}
-
-/**
- * Logs an error concerning an API call.
-   * @param {ResponseMessage} responseError - the intercepted response error
- */
-function showApiError(responseError) {
-  if (environment.debug) {
-    extractMessage(responseError).then(message => iziToast.error({ title: popupTitle, message }));
-  } else {
-    iziToast.error({ title: popupTitle, message: defaultErrorMessage });
+  /**
+   * Intercepts and handles the request error.
+   * @param {RequestMessage} requestError - the intercepted request error
+   */
+  async requestError(requestError) {
+    this.showApiError(requestError);
+    throw requestError;
   }
+
+  /**
+   * Logs an error concerning an API call.
+   * @param {ResponseMessage} responseError - the intercepted response error
+   */
+  async showApiError(responseError) {
+    if (environment.debug) {
+      extractMessage(responseError, this._i18n.tr('error.defaultMessage')).then(message => iziToast.error({ title: this._i18n.tr('error.title'), message }));
+    } else {
+      iziToast.error({
+        title: this._i18n.tr('error.title'),
+        message: this._i18n.tr('error.defaultMessage')
+      });
+    }
+  }
+
 }
 
 /**
  * Extracts the message from the given fault.
  * @param {any} fault - the fault to parse
- * @return {Promise} The promise to get the message.
+ * @param {string} fallbackMessage - fallback message if Response doesn't contain specific Message
+ * @return {Promise} the promise to get the message.
  */
-function extractMessage(fault) {
-  let message = defaultErrorMessage;
+function extractMessage(fault, fallbackMessage) {
+  let message = fallbackMessage;
 
   //Http Errors
   if (fault instanceof Response || fault.httpResponse instanceof Response) {
@@ -67,14 +82,19 @@ function extractMessage(fault) {
 
 /**
  * Tries to find detailed information in the given text.
- * @param {string} text - The text to parse.
- * @return {string} A detailed message or an empty string.
+ * @param {string} text - the text to parse.
+ * @return {string} a detailed message or an empty string.
  */
 function getExceptionMessage(text) {
   try {
     let exceptionObject = JSON.parse(text);
     if (exceptionObject) {
-      return exceptionObject.ExceptionMessage || exceptionObject.Message || exceptionObject.message || '';
+      return (
+        exceptionObject.ExceptionMessage ||
+        exceptionObject.Message ||
+        exceptionObject.message ||
+        ''
+      );
     }
   } catch (e) {
     return text;

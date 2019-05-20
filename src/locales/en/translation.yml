@@ -47,3 +47,6 @@ gathering:
   storage: Storage
   gathering: Gathering
   save: Validate Gathering
+error:
+  title: Error
+  defaultMessage: A communication error has occured.

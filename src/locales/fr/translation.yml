@@ -47,3 +47,6 @@ gathering:
   storage: Stockage
   gathering: Collecte
   save: Valider Collecte
+error:
+  title: Erreur
+  defaultMessage: Une erreur de communication s'est produite.
