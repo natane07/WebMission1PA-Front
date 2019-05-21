@@ -52,6 +52,11 @@ gathering:
   nocollecte: Veuillez sélectionner une collecte et une adresse de stockage valide !
   affected: Articles affectés
   available: Articles disponibles
+create-gathering:
+  title: Créer une nouvelle collecte
+  name: Nom
+  transporter: Transporteur
+  save: Ajouter
 error:
   title: Erreur
   defaultMessage: Une erreur de communication s'est produite.

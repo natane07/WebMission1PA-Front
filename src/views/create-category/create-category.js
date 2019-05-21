@@ -9,7 +9,7 @@ import {
 } from 'aurelia-validation';
 import { SITEMAP } from 'config/app-config';
 
-@inject(ArticleService, ValidationControllerFactory, Validator, I18N, Router, )
+@inject(ArticleService, ValidationControllerFactory, Validator, I18N, Router)
 export class CreateCategory {
 
   _category = '';

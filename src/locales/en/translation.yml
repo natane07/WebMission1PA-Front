@@ -52,6 +52,11 @@ gathering:
   nocollecte: Please select a valid gathering and a storage address!
   affected: Affected articles
   available: Available articles
+create-gathering:
+  title: Create new Gathering
+  name: Name
+  transporter: Transporter
+  save: Add
 error:
   title: Error
   defaultMessage: A communication error has occured.

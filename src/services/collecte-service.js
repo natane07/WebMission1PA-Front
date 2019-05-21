@@ -1,7 +1,6 @@
 import { inject } from 'aurelia-framework';
 import { HttpClient } from 'aurelia-fetch-client';
 
-
 @inject(HttpClient)
 export class CollecteService {
 
@@ -15,6 +14,15 @@ export class CollecteService {
 
   getCollectes() {
     return this._http.fetch('/collecte').then(res => res.json());
+  }
+
+  postCollecte(data) {
+    return this._http
+      .fetch('/collecte', {
+        method: 'post',
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json());
   }
 
   validateCollecte(id, data) {

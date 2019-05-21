@@ -1,5 +1,6 @@
-import { inject, computedFrom } from 'aurelia-framework';
-import { ArticleService } from 'services/article-service';
+import { inject } from 'aurelia-framework';
+import { TransporterService } from 'services/transporter-service';
+import { CollecteService } from 'services/collecte-service';
 import { I18N } from 'aurelia-i18n';
 import { Router } from 'aurelia-router';
 import {
@@ -9,17 +10,16 @@ import {
 } from 'aurelia-validation';
 import { SITEMAP } from 'config/app-config';
 
-@inject(ArticleService, ValidationControllerFactory, Validator, I18N, Router, )
-export class CreateCategory {
+@inject(TransporterService, CollecteService, ValidationControllerFactory, Validator, I18N, Router)
+export class CreateGathering {
 
-  _category = '';
-  stock = 0;
-  categories;
-  similarCategories = [];
+  name = '';
+  transporter = null;
   canSave = false;
 
-  constructor(articleService, controllerFactory, validator, i18n, router) {
-    this._articleService = articleService;
+  constructor(transporterService, collecteService, controllerFactory, validator, i18n, router) {
+    this._transporterService = transporterService;
+    this._collecteService = collecteService;
     this.controller = controllerFactory.createForCurrentScope();
     this.controller.subscribe(() => this.validate());
     this.validator = validator;
@@ -30,43 +30,31 @@ export class CreateCategory {
   }
 
   activate() {
-    this._articleService
-      .getCategories()
-      .then(res => (this.categories = res.categorie));
-  }
-
-  set category(value) {
-    this._category = value;
-    this.similarCategories = this.categories.filter(e => e.type_article.toLowerCase().startsWith(value.toLowerCase()));
-  }
-
-  @computedFrom('_category')
-  get category() {
-    return this._category;
+    this._transporterService
+      .getTransporters()
+      .then(res => (this.transporters = res.data));
   }
 
   setValidationRules() {
-    ValidationRules.ensure('category')
+    ValidationRules.ensure('name')
       .required()
-      .withMessage(`${this.i18n.tr('category.name')} ${this.i18n.tr('errors.required')}`)
+      .withMessage(`${this.i18n.tr('create-gathering.name')} ${this.i18n.tr('errors.required')}`)
       .minLength(3)
-      .withMessage(`${this.i18n.tr('category.name')} ${this.i18n.tr('errors.minLength')}`)
+      .withMessage(`${this.i18n.tr('create-gathering.name')} ${this.i18n.tr('errors.minLength')}`)
       .maxLength(50)
-      .withMessage(`${this.i18n.tr('category.name')} ${this.i18n.tr('errors.maxLength')}`)
-      .ensure('stock')
+      .withMessage(`${this.i18n.tr('create-gathering.name')} ${this.i18n.tr('errors.maxLength')}`)
+      .ensure('transporter')
       .required()
-      .withMessage(`${this.i18n.tr('category.maxAmount')} ${this.i18n.tr('errors.required')}`)
-      .satisfies(obj => !isNaN(obj))
-      .withMessage(`${this.i18n.tr('category.maxAmount')} ${this.i18n.tr('errors.nan')}`)
-      .on(CreateCategory);
+      .withMessage(`${this.i18n.tr('create-gathering.transporter')} ${this.i18n.tr('errors.required')}`)
+      .on(CreateGathering);
   }
 
   save() {
-    return this._articleService
-      .postCategory({
-        categorie: { type_article: this.category, stockage_max: this.stock }
+    return this._collecteService
+      .postCollecte({
+        data: { name: this.name, id_USER_TRANSPORTER: this.transporter }
       })
-      .then(() => this._router.navigateToRoute(SITEMAP.pendingArticles));
+      .then(() => this._router.navigateToRoute(SITEMAP.gathering));
   }
 
   validate() {
