@@ -11,7 +11,8 @@ export const SITEMAP = {
   pendingArticles: 'pending-articles',
   settings: 'settings',
   createCategory: 'create-category',
-  gathering: 'gathering'
+  gathering: 'gathering',
+  createGathering: 'create-gathering'
 };
 
 /**
@@ -19,7 +20,7 @@ export const SITEMAP = {
  */
 export const ROUTES = [
   {
-    route: ['', 'home'],
+    route: ['', SITEMAP.home],
     nav: true,
     name: SITEMAP.home,
     moduleId: 'views/home/home',
@@ -27,7 +28,7 @@ export const ROUTES = [
     settings: { breadcrumb: true, order: 0 }
   },
   {
-    route: 'pending-articles',
+    route: SITEMAP.pendingArticles,
     nav: true,
     name: SITEMAP.pendingArticles,
     moduleId: 'views/pending-articles/pending-articles',
@@ -35,26 +36,33 @@ export const ROUTES = [
     settings: { breadcrumb: true, order: 1 }
   },
   {
-    route: 'settings',
+    route: SITEMAP.settings,
     nav: true,
     name: SITEMAP.settings,
     moduleId: 'views/settings/settings',
     title: 'routes.settings'
   },
   {
-    route: 'create-category',
+    route: SITEMAP.createCategory,
     nav: true,
     name: SITEMAP.createCategory,
     moduleId: 'views/create-category/create-category',
     title: 'routes.create-category'
   },
   {
-    route: 'gathering',
+    route: SITEMAP.gathering,
     nav: true,
     name: SITEMAP.gathering,
     moduleId: 'views/gathering/gathering',
     title: 'routes.gathering',
     settings: { breadcrumb: true, order: 2 }
+  },
+  {
+    route: SITEMAP.createGathering,
+    nav: true,
+    name: SITEMAP.createGathering,
+    moduleId: 'views/create-gathering/create-gathering',
+    title: 'routes.create-gathering'
   }
 ];
 

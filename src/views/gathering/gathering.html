@@ -4,7 +4,8 @@
       <compose view-model="../breadcrumb/breadcrumb"></compose>
     </div>
     <div class="row">
-      <button class="btn btn-primary flex-center-parent">${'gathering.createGathering' & t}</button>
+      <button class="btn btn-primary flex-center-parent" click.trigger="addGathering()">
+        ${'gathering.createGathering' & t}</button>
     </div>
     <div class="grid-row">
       <label class="col-start-3 col-end-6">${'gathering.gathering' & t}

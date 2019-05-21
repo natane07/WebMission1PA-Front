@@ -1,7 +1,7 @@
 import { inject } from 'aurelia-framework';
 import { Connection } from 'plugin/connection';
 import { Router } from 'aurelia-router';
-import { SITEMAP } from '../../config/app-config';
+import { SITEMAP } from 'config/app-config';
 
 @inject(Connection, Router)
 export class Header {

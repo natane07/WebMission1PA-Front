@@ -3,6 +3,7 @@ import { ArticleService } from 'services/article-service';
 import { Router } from 'aurelia-router';
 import { I18N } from 'aurelia-i18n';
 import { Toastr } from 'core/toastr';
+import { SITEMAP } from 'config/app-config';
 
 @inject(ArticleService, Router, I18N, Toastr)
 export class PendingArticles {
@@ -25,7 +26,7 @@ export class PendingArticles {
   }
 
   createCategory() {
-    return this._router.navigateToRoute('create-category');
+    return this._router.navigateToRoute(SITEMAP.createCategory);
   }
 
   validateArticle(article) {

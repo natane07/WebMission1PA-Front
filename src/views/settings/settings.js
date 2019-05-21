@@ -1,9 +1,9 @@
 import { inject } from 'aurelia-framework';
 import { Connection } from 'plugin/connection';
-import { UserSettings } from '../../models/user-settings';
+import { UserSettings } from 'models/user-settings';
 import { I18N } from 'aurelia-i18n';
 import { Router } from 'aurelia-router';
-import { LANGUAGE_SETTINGS, DATE_FORMAT_SETTINGS } from '../../config/app-config';
+import { LANGUAGE_SETTINGS, DATE_FORMAT_SETTINGS, SITEMAP } from 'config/app-config';
 
 @inject(Connection, UserSettings, I18N, Router)
 export class Settings {
@@ -28,7 +28,7 @@ export class Settings {
   }
 
   save() {
-    return this.userSettings.save().then(() => this._router.navigateToRoute('home'));
+    return this.userSettings.save().then(() => this._router.navigateToRoute(SITEMAP.home));
   }
 
 }
