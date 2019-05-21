@@ -5,6 +5,7 @@ routes:
   gathering: Collecte
   settings: Paramètres
   create-gathering: Créer Collecte
+  stock: Stock
 home:
   introduction: Bienvenue sur {{appTitle}} !
   presentation: "9 Tonnes de nourriture sont gâchées chaque année en France. Fight Food Waste est une organisation à but non lucratif visant à réduire ce chiffre alarmant. Nous faisons en sorte que les produits en phase d'expiration soient donnés à des particuliers ou à d'autres associations. Tout le monde peut donner ses produits: il suffit d'entrer ses coordonnées et soumettre ses produits à notre application et nous irons les récupérer chez vous pour vous. Aidez-nous à combattre le gâchis de nourriture !"
@@ -13,6 +14,7 @@ breadcrumb:
   home: Accueil
   pending-articles: Articles en attente
   gathering: Collecte
+  stock: Stock
 header:
   settings: Paramètres
   login: Connexion
