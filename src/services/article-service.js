@@ -63,4 +63,10 @@ export class ArticleService {
       .then(response => response.json());
   }
 
+  getStoredArticles() {
+    return this._httpClient
+      .fetch(`${this.url}/stock`)
+      .then(response => response.json());
+  }
+
 }

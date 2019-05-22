@@ -1,1 +1,31 @@
-<template></template>
+<template>
+  <require from="./stock.css"></require>
+  <div class="container">
+    <div class="category-title">
+      <compose view-model="../breadcrumb/breadcrumb"></compose>
+    </div>
+    <div class="sort-icons">
+      <i class="icon size-3">
+        <sort-1 click.trigger="unsortArticles()"></sort-1>
+      </i>
+      <i class="icon size-3">
+        <sort-2 click.trigger="sortArticles()"></sort-2>
+      </i>
+    </div>
+    <section class="card-list" if.bind="!isSorted">
+      <div repeat.for="a of articles">
+        <img src.bind="a.image_url">
+      </div>
+    </section>
+    <section if.bind="isSorted">
+      <div repeat.for="category of articles" class="card-section">
+        <h2>${category.category}</h2>
+        <section class="card-list">
+          <div repeat.for="a of category.articles">
+            <img src.bind="a.image_url">
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+</template>
