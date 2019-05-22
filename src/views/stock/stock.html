@@ -23,6 +23,7 @@
         <section class="card-list">
           <div repeat.for="a of category.articles">
             <img src.bind="a.image_url">
+            <span>x${a.amount}</span>
           </div>
         </section>
       </div>

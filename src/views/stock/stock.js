@@ -32,7 +32,17 @@ export class Stock {
       this.articles = [];
       let IdCategories = new Set(this._articles.map(a => a.id_CATEGORIES));
       IdCategories.forEach(id => {
-        let categoryArticles = this._articles.filter(a => a.id_CATEGORIES === id);
+        let categoryArticles = [];
+        this._articles
+          .filter(a => a.id_CATEGORIES === id)
+          .reduce((map, article) => {
+            let value = map.get(article.product_name);
+            return map.set(article.product_name, {
+              ...article,
+              amount: (value && value.amount ? value.amount : 0) + 1
+            });
+          }, new Map())
+          .forEach(e => categoryArticles.push(e));
         let category = this.categories.find(c => c.id === id).type_article;
         this.articles.push({
           category: category,
