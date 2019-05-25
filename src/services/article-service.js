@@ -14,6 +14,12 @@ export class ArticleService {
     this.url = '/article';
   }
 
+  getArticle(id) {
+    return this._httpClient
+      .fetch(`${this.url}/${id}`)
+      .then(response => response.json());
+  }
+
   getArticles() {
     return this._httpClient
       .fetch(`${this.url}/attente/recolte/validation`)

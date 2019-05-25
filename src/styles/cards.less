@@ -5,6 +5,7 @@
   flex-flow: row wrap;
   justify-content: space-evenly;
   & > div {
+    display: flex;
     margin: 1rem;
     & > img {
       padding: 1px;
@@ -12,6 +13,11 @@
       width: 10rem;
       height: 10rem;
       border: 1px solid @colorset-dark2;
+      cursor: pointer;
+    }
+    & > span {
+      margin: auto;
+      padding-left: 1rem;
     }
   }
 }

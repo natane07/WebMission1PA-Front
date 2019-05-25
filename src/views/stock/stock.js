@@ -1,11 +1,14 @@
 import { inject } from 'aurelia-framework';
 import { ArticleService } from 'services/article-service';
+import { Router } from 'aurelia-router';
+import { SITEMAP } from '../../config/app-config';
 
-@inject(ArticleService)
+@inject(ArticleService, Router)
 export class Stock {
 
-  constructor(articleService) {
+  constructor(articleService, router) {
     this._articleService = articleService;
+    this._router = router;
   }
 
   articles = [];
@@ -55,6 +58,10 @@ export class Stock {
   unsortArticles() {
     this.articles = this._articles;
     this.isSorted = false;
+  }
+
+  viewDetails(idArticle) {
+    return this._router.navigateToRoute(SITEMAP.article, { id: idArticle });
   }
 
 }

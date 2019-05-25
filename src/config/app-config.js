@@ -13,7 +13,8 @@ export const SITEMAP = {
   createCategory: 'create-category',
   gathering: 'gathering',
   createGathering: 'create-gathering',
-  stock: 'stock'
+  stock: 'stock',
+  article: 'article'
 };
 
 /**
@@ -72,6 +73,13 @@ export const ROUTES = [
     moduleId: 'views/stock/stock',
     title: 'routes.stock',
     settings: { breadcrumb: true, order: 3 }
+  },
+  {
+    route: SITEMAP.article,
+    nav: true,
+    name: SITEMAP.article,
+    moduleId: 'views/article/article',
+    title: 'routes.article'
   }
 ];
 

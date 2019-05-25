@@ -1,0 +1,14 @@
+<template>
+  <div class="container">
+    <h1>${article.product_name}</h1>
+    <div class="grid-row">
+      <img class="col-start-1 col-end-2" src.bind="article.image_url">
+      <ul class="col-start-2 col-end-12">
+        <li>${'articles.brands' & t}: ${article.brands}</li>
+        <li>${'articles.labels' & t}: ${article.labels}</li>
+        <li>${'articles.ingredients' & t}: ${article.ingredients_text}</li>
+        <li>${'articles.categories' & t}: ${article.id_CATEGORIES}</li>
+      </ul>
+    </div>
+  </div>
+</template>

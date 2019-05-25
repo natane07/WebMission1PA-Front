@@ -14,7 +14,7 @@
     </div>
     <section class="card-list" if.bind="!isSorted">
       <div repeat.for="a of articles">
-        <img src.bind="a.image_url">
+        <img src.bind="a.image_url" click.trigger="viewDetails(a.id)">
       </div>
     </section>
     <section if.bind="isSorted">
@@ -22,7 +22,7 @@
         <h2>${category.category}</h2>
         <section class="card-list">
           <div repeat.for="a of category.articles">
-            <img src.bind="a.image_url">
+            <img src.bind="a.image_url" click.trigger="viewDetails(a.id)">
             <span>x${a.amount}</span>
           </div>
         </section>
