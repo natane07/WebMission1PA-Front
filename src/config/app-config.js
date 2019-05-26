@@ -14,7 +14,8 @@ export const SITEMAP = {
   gathering: 'gathering',
   createGathering: 'create-gathering',
   stock: 'stock',
-  article: 'article'
+  article: 'article',
+  delivery: 'delivery'
 };
 
 /**
@@ -80,6 +81,14 @@ export const ROUTES = [
     name: SITEMAP.article,
     moduleId: 'views/article/article',
     title: 'routes.article'
+  },
+  {
+    route: SITEMAP.delivery,
+    nav: true,
+    name: SITEMAP.delivery,
+    moduleId: 'views/delivery/delivery',
+    title: 'routes.delivery',
+    settings: { breadcrumb: true, order: 4 }
   }
 ];
 
