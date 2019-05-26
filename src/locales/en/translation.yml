@@ -8,6 +8,7 @@ routes:
   stock: Stock
   article: Article
   delivery: Delivery
+  create-delivery: Create Delivery
 home:
   introduction: Welcome to {{appTitle}}!
   presentation: '20 Billions of Pounds of food are wasted every year in France. Fight Food Waste is a non-profit organization aiming to reduce this alarming number. We ensure that nearly expired products are donated to private individuals or other organizations. Everyone can donate products for free: you just need to enter your contact details and submit your products to our application and we will fetch them for you at your home. Help us fight food waste!'
@@ -58,8 +59,21 @@ gathering:
   nocollecte: Please select a valid gathering and a storage address!
   affected: Affected articles
   available: Available articles
+delivery:
+  createDelivery: + Create Delivery
+  storage: Storage
+  delivery: Delivery
+  save: Validate Delivery
+  nocollecte: Please select a valid delivery and a storage address!
+  affected: Affected articles
+  available: Available articles
 create-gathering:
   title: Create new Gathering
+  name: Name
+  transporter: Transporter
+  save: Add
+create-delivery:
+  title: Create new Delivery
   name: Name
   transporter: Transporter
   save: Add

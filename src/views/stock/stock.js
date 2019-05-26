@@ -1,7 +1,7 @@
 import { inject } from 'aurelia-framework';
 import { ArticleService } from 'services/article-service';
 import { Router } from 'aurelia-router';
-import { SITEMAP } from '../../config/app-config';
+import { SITEMAP } from 'config/app-config';
 
 @inject(ArticleService, Router)
 export class Stock {

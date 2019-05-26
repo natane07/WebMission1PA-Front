@@ -3,5 +3,24 @@
     <div class="category-title">
       <compose view-model="../breadcrumb/breadcrumb"></compose>
     </div>
+    <div class="row">
+      <button class="btn btn-primary flex-center-parent" click.trigger="createDelivery()">
+        ${'delivery.createDelivery' & t}</button>
+    </div>
+    <div class="row">
+      <label class="flex-center-parent">${'delivery.delivery' & t}
+        <select class="input" value.bind="delivery.id">
+          <option repeat.for="d of deliveries" model.bind="d.id">
+            ${d.name} ${d.date_start | date:userSettings.dateFormat}
+          </option>
+        </select>
+      </label>
+    </div>
+    <arrow-list source.bind="users" destination.bind="validatedUsers"
+    source-name.bind="_i18n.tr('delivery.available')" destination-name.bind="_i18n.tr('delivery.affected')">
+    <template replace-part="items">
+      <span>${item.product_name} - ${item.name} ${item.lastname}</span>
+    </template>
+  </arrow-list>
   </div>
 </template>

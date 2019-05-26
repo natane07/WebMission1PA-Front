@@ -1,0 +1,32 @@
+<template>
+  <div class="container">
+    <h1 class="category-title">${'create-delivery.title' & t}</h1>
+    <form class="grid-row">
+      <label class="col-start-3 col-end-6" validation-errors.bind="nameErrors">${'create-delivery.name' & t}
+        <input class.bind="nameErrors.length ? 'input input-danger' : 'input'" value.bind="name & validate">
+        <ul if.bind="nameErrors" class="form-error">
+          <li repeat.for="error of nameErrors">
+            ${error.error.message}
+          </li>
+        </ul>
+      </label>
+      <label class="col-start-8 col-end-11" validation-errors.bind="transportErrors">
+        ${'create-delivery.transporter' & t}
+        <select class.bind="transportErrors.length ? 'input input-danger' : 'input'" value.bind="transporter & validate">
+          <option repeat.for="t of transporters" model.bind="t.id">
+            ${t.name} ${t.lastname}
+          </option>
+        </select>
+        <ul if.bind="transportErrors" class="form-error">
+          <li repeat.for="error of transportErrors">
+            ${error.error.message}
+          </li>
+        </ul>
+      </label>
+    </form>
+    <div class="row">
+      <button class="btn btn-primary flex-center-parent" disabled.bind="!canSave"
+        click.trigger="save()">${'create-delivery.save' & t}</button>
+    </div>
+  </div>
+</template>

@@ -12,17 +12,20 @@ export class Gathering {
 
   gathering = { data: {}};
 
-  constructor(articleService, collecteService, userSettings, toastr, i18n, router) {
+  constructor(
+    articleService,
+    collecteService,
+    userSettings,
+    toastr,
+    i18n,
+    router
+  ) {
     this._articleService = articleService;
     this._collecteService = collecteService;
     this.userSettings = userSettings;
     this._toastr = toastr;
     this._i18n = i18n;
     this._router = router;
-  }
-
-  addGathering() {
-    return this._router.navigateToRoute(SITEMAP.createGathering);
   }
 
   activate() {
@@ -35,6 +38,10 @@ export class Gathering {
     this._collecteService
       .getCollectes()
       .then(res => (this.gatherings = res.collectes));
+  }
+
+  addGathering() {
+    return this._router.navigateToRoute(SITEMAP.createGathering);
   }
 
   setArticles(articles) {
