@@ -1,0 +1,29 @@
+<template>
+  <require from="./shop.css"></require>
+  <div class="container">
+    <h1>Stock</h1>
+    <div class="swap-icon">
+      <i class="icon size-3">
+        <cart></cart>
+      </i>
+    </div>
+    <section class="card-list" if.bind="status === viewMap.articles">
+      <div class="row" repeat.for="a of articles">
+        <img src.bind="a.image_url" click.trigger="viewDetails(a.id)">
+        <input class="check" type="checkbox" checked.bind="a.selected">
+      </div>
+    </section>
+    <section if.bind="status === viewMap.details">
+      <div class="grid-row">
+        <img class="col-start-1 col-end-2" src.bind="article.image_url">
+        <ul class="col-start-2 col-end-12">
+          <li>${'articles.brands' & t}: ${article.brands}</li>
+          <li>${'articles.labels' & t}: ${article.labels}</li>
+          <li>${'articles.ingredients' & t}: ${article.ingredients_text}</li>
+          <li>${'articles.categories' & t}: ${article.id_CATEGORIES}</li>
+          <button class="btn btn-primary back" click.trigger="backToArticles()">Back</button>
+        </ul>
+      </div>
+    </section>
+  </div>
+</template>

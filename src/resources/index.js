@@ -6,6 +6,7 @@ export function configure(config) {
     './elements/svg/arrow-right.html',
     './elements/svg/sort-1.html',
     './elements/svg/sort-2.html',
+    './elements/svg/cart.html',
     './value-converters/take',
     './value-converters/date',
     './elements/arrow-list/arrow-list'
