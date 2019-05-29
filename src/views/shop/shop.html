@@ -1,8 +1,8 @@
 <template>
   <require from="./shop.css"></require>
   <div class="container">
-    <h1>Stock</h1>
-    <div class="swap-icon">
+    <h1>${title}</h1>
+    <div class="swap-icon" if.bind="status !== viewMap.details">
       <i class="icon size-3">
         <cart></cart>
       </i>
@@ -21,9 +21,12 @@
           <li>${'articles.labels' & t}: ${article.labels}</li>
           <li>${'articles.ingredients' & t}: ${article.ingredients_text}</li>
           <li>${'articles.categories' & t}: ${article.id_CATEGORIES}</li>
-          <button class="btn btn-primary back" click.trigger="backToArticles()">Back</button>
+          <button class="btn btn-primary back" click.trigger="toArticles()">Back</button>
         </ul>
       </div>
     </section>
+    <div class="row" if.bind="status !== viewMap.details">
+      <button class="btn btn-primary flex-center-parent">Add to Cart</button>
+    </div>
   </div>
 </template>

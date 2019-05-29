@@ -11,10 +11,10 @@ const VIEWMAP = {
 export class Shop {
 
   viewMap = VIEWMAP;
-  status = VIEWMAP.articles;
 
   constructor(articleService) {
     this._articleService = articleService;
+    this.toArticles();
   }
 
   activate() {
@@ -25,13 +25,17 @@ export class Shop {
 
   viewDetails(articleId) {
     this.status = VIEWMAP.details;
-    this._articleService
-      .getArticle(articleId)
-      .then(res => (this.article = res));
+    this._articleService.getArticle(articleId).then(res => {
+      this.article = res;
+      this.title = this.article.product_name;
+    });
   }
 
-  backToArticles() {
+  viewCart() {}
+
+  toArticles() {
     this.status = VIEWMAP.articles;
+    this.title = 'Choose your products!';
   }
 
 }
