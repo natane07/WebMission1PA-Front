@@ -47,6 +47,7 @@ category:
   name: nom
   maxAmount: stockage maximum
   save: Ajouter
+  cancel: Annuler
 errors:
   required: est requis !
   nan: doit être un entier valide !
@@ -73,11 +74,13 @@ create-gathering:
   name: Nom
   transporter: Transporteur
   save: Ajouter
+  cancel: Cancel
 create-delivery:
   title: Créer une nouvelle Livraison
   name: Nom
   transporter: Transporteur
   save: Ajouter
+  cancel: Cancel
 error:
   title: Erreur
   defaultMessage: Une erreur de communication s'est produite.

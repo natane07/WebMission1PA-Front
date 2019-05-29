@@ -75,4 +75,8 @@ export class CreateCategory {
       .then(results => (this.canSave = results.every(result => result.valid)));
   }
 
+  cancel() {
+    return this._router.navigateToRoute(SITEMAP.pendingArticles);
+  }
+
 }

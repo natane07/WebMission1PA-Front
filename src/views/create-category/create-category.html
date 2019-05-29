@@ -27,7 +27,8 @@
       </label>
     </div>
     <div class="row">
-      <button class="btn btn-primary flex-center-parent" disabled.bind="!canSave" click.trigger="save()">${'category.save' & t}</button>
+      <button class="btn btn-primary" click.trigger="cancel()">${'category.cancel' & t}</button>
+      <button class="btn btn-primary" disabled.bind="!canSave" click.trigger="save()">${'category.save' & t}</button>
     </div>
   </div>
 </template>

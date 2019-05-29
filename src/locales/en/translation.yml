@@ -47,6 +47,7 @@ category:
   name: name
   maxAmount: maximum storage
   save: Add
+  cancel: Cancel
 errors:
   required: is required!
   nan: must be a valid integer!
@@ -73,11 +74,13 @@ create-gathering:
   name: Name
   transporter: Transporter
   save: Add
+  cancel: Cancel
 create-delivery:
   title: Create new Delivery
   name: Name
   transporter: Transporter
   save: Add
+  cancel: Cancel
 error:
   title: Error
   defaultMessage: A communication error has occured.

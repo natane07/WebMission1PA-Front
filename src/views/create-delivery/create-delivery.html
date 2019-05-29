@@ -12,7 +12,8 @@
       </label>
       <label class="col-start-8 col-end-11" validation-errors.bind="transportErrors">
         ${'create-delivery.transporter' & t}
-        <select class.bind="transportErrors.length ? 'input input-danger' : 'input'" value.bind="transporter & validate">
+        <select class.bind="transportErrors.length ? 'input input-danger' : 'input'"
+          value.bind="transporter & validate">
           <option repeat.for="t of transporters" model.bind="t.id">
             ${t.name} ${t.lastname}
           </option>
@@ -25,8 +26,10 @@
       </label>
     </form>
     <div class="row">
-      <button class="btn btn-primary flex-center-parent" disabled.bind="!canSave"
-        click.trigger="save()">${'create-delivery.save' & t}</button>
+      <button class="btn btn-primary" click.trigger="cancel()">
+        ${'create-delivery.cancel' & t}</button>
+      <button class="btn btn-primary" disabled.bind="!canSave" click.trigger="save()">
+        ${'create-delivery.save' & t}</button>
     </div>
   </div>
 </template>
