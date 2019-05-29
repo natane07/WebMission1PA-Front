@@ -66,7 +66,7 @@ delivery:
   storage: Stockage
   delivery: Livraison
   save: Valider Livraison
-  nocollecte: Veuillez sélectionner une livraison et une adresse de stockage valide !
+  nocollecte: Veuillez sélectionner une livraison valide !
   affected: Articles affectés
   available: Articles disponibles
 create-gathering:

@@ -46,7 +46,6 @@ export class Gathering {
 
   setArticles(articles) {
     this.articles = articles;
-    this.articleNames = articles.map(a => a.product_name);
     this.validatedArticles = [];
   }
 

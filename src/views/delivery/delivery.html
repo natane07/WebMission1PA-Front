@@ -19,8 +19,12 @@
     <arrow-list source.bind="users" destination.bind="validatedUsers"
     source-name.bind="_i18n.tr('delivery.available')" destination-name.bind="_i18n.tr('delivery.affected')">
     <template replace-part="items">
-      <span>${item.product_name} - ${item.name} ${item.lastname}</span>
+      <span>${item.name} ${item.lastname} - ${item.numberArticle} article(s)</span>
     </template>
   </arrow-list>
+  <div class="row">
+      <button class="btn btn-primary flex-center-parent" click.trigger="validateDelivery()">
+        ${'delivery.save' & t}</button>
+    </div>
   </div>
 </template>
