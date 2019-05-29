@@ -1,4 +1,5 @@
 <template>
+  <require from="./article.css"></require>
   <div class="container">
     <h1>${article.product_name}</h1>
     <div class="grid-row">
@@ -7,7 +8,8 @@
         <li>${'articles.brands' & t}: ${article.brands}</li>
         <li>${'articles.labels' & t}: ${article.labels}</li>
         <li>${'articles.ingredients' & t}: ${article.ingredients_text}</li>
-        <li>${'articles.categories' & t}: ${article.id_CATEGORIES}</li>
+        <li>${'articles.categories' & t}: ${article.type_article}</li>
+        <button class="btn btn-primary back" click.trigger="backToArticles()">Back</button>
       </ul>
     </div>
   </div>
