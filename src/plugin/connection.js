@@ -127,4 +127,13 @@ export class Connection {
     return this.user?.profile?.name;
   }
 
+  /**
+   * The display name of the user.
+   * @description A combination of firstname / last name.
+   */
+  @computedFrom('user')
+  get email() {
+    return this.user?.profile?.emails[0];
+  }
+
 }

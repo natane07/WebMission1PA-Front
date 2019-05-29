@@ -9,11 +9,12 @@ routes:
   article: Article
   delivery: Livraison
   create-delivery: Créer Livraison
-  shop: Stock
+  shop: Magasin
+  infos: Infos
 home:
   introduction: Bienvenue sur {{appTitle}} !
   presentation: "9 Tonnes de nourriture sont gâchées chaque année en France. Fight Food Waste est une organisation à but non lucratif visant à réduire ce chiffre alarmant. Nous faisons en sorte que les produits en phase d'expiration soient donnés à des particuliers ou à d'autres associations. Tout le monde peut donner ses produits: il suffit d'entrer ses coordonnées et soumettre ses produits à notre application et nous irons les récupérer chez vous pour vous. Aidez-nous à combattre le gâchis de nourriture !"
-  manage: Gérer
+  manage: Commencer
 breadcrumb:
   home: Accueil
   pending-articles: Articles en attente
@@ -81,6 +82,15 @@ create-delivery:
   transporter: Transporteur
   save: Ajouter
   cancel: Cancel
+informations:
+  title: Informations
+  name: Prénom
+  lastname: Nom
+  type: Type
+  address: Adresse
+  zipcode: Code postal
+  phone: Numéro de téléphone
+  save: Valider
 error:
   title: Erreur
   defaultMessage: Une erreur de communication s'est produite.

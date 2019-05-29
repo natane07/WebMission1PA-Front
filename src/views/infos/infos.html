@@ -1,0 +1,39 @@
+<template>
+  <div class="container">
+    <h1 class="category-title">${'informations.title' & t}</h1>
+    <form class="grid-row">
+      <label class="row-start-1 row-end-2 col-start-3 col-end-6"
+        validation-errors.bind="nameErrors">${'informations.name' & t}
+        <input class.bind="nameErrors.length ? 'input input-danger' : 'input'" value.bind="name & validate">
+      </label>
+      <label class="row-start-1 row-end-2 col-start-8 col-end-11"
+        validation-errors.bind="lnameErrors">${'informations.lastname' & t}
+        <input class.bind="lnameErrors.length ? 'input input-danger' : 'input'" value.bind="lastname & validate">
+      </label>
+      <label class="row-start-2 row-end-3 col-start-3 col-end-6" validation-errors.bind="typeErrors">
+        ${'informations.type' & t}
+        <select class.bind="typeErrors.length ? 'input input-danger' : 'input'" value.bind="type & validate">
+          <option repeat.for="t of userTypes" model.bind="t.id">
+            ${t.type_user}
+          </option>
+        </select>
+      </label>
+      <label class="row-start-2 row-end-3 col-start-8 col-end-11"
+        validation-errors.bind="addressErrors">${'informations.address' & t}
+        <input class.bind="addressErrors.length ? 'input input-danger' : 'input'" value.bind="address & validate">
+      </label>
+      <label class="row-start-3 row-end-4 col-start-3 col-end-6"
+        validation-errors.bind="zipcodeErrors">${'informations.zipcode' & t}
+        <input class.bind="zipcodeErrors.length ? 'input input-danger' : 'input'" value.bind="zipcode & validate">
+      </label>
+      <label class="row-start-3 row-end-4 col-start-8 col-end-11"
+        validation-errors.bind="phoneErrors">${'informations.phone' & t}
+        <input class.bind="phoneErrors.length ? 'input input-danger' : 'input'" value.bind="phone & validate">
+      </label>
+    </form>
+    <div class="row">
+      <button class="btn btn-primary flex-center-parent" disabled.bind="!canSave" click.trigger="save()">
+        ${'informations.save' & t}</button>
+    </div>
+  </div>
+</template>

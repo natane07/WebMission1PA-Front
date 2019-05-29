@@ -17,7 +17,8 @@ export const SITEMAP = {
   article: 'article',
   delivery: 'delivery',
   createDelivery: 'create-delivery',
-  shop: 'shop'
+  shop: 'shop',
+  infos: 'infos'
 };
 
 /**
@@ -105,6 +106,13 @@ export const ROUTES = [
     name: SITEMAP.shop,
     moduleId: 'views/shop/shop',
     title: 'routes.shop'
+  },
+  {
+    route: SITEMAP.infos,
+    nav: true,
+    name: SITEMAP.infos,
+    moduleId: 'views/infos/infos',
+    title: 'routes.infos'
   }
 ];
 
