@@ -43,6 +43,7 @@ articles:
   loading: Loading...
   noarticle: There are no submitted articles left!
   nocategory: You must associate a category to the product before submitting it!
+  back: Back
 category:
   title: Create new category
   name: name
@@ -91,6 +92,10 @@ informations:
   zipcode: Zip Code
   phone: Phone Number
   save: Validate
+shop:
+  title-products: Choose your products!
+  title-cart: Cart
+  validate: Validate Cart
 error:
   title: Error
   defaultMessage: A communication error has occured.

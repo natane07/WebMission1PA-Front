@@ -3,14 +3,19 @@
   <div class="container">
     <h1>${title}</h1>
     <div class="swap-icon" if.bind="status !== viewMap.details">
-      <i class="icon size-3">
-        <cart></cart>
+      <i class="icon size-3" if.bind="status === viewMap.articles">
+        <cart click.trigger="viewCart()"></cart>
+      </i>
+      <i class="icon size-3" if.bind="status === viewMap.cart">
+        <sort-1 click.trigger="toArticles()"></sort-1>
       </i>
     </div>
     <section class="card-list" if.bind="status === viewMap.articles">
       <div class="row" repeat.for="a of articles">
         <img src.bind="a.image_url" click.trigger="viewDetails(a.id)">
-        <input class="check" type="checkbox" checked.bind="a.selected">
+        <i class="icon size-2 check">
+          <check click.trigger="addArticle(a.id)"></check>
+        </i>
       </div>
     </section>
     <section if.bind="status === viewMap.details">
@@ -21,12 +26,20 @@
           <li>${'articles.labels' & t}: ${article.labels}</li>
           <li>${'articles.ingredients' & t}: ${article.ingredients_text}</li>
           <li>${'articles.categories' & t}: ${article.id_CATEGORIES}</li>
-          <button class="btn btn-primary back" click.trigger="toArticles()">Back</button>
+          <button class="btn btn-primary back" click.trigger="toArticles()">${'articles.back' & t}</button>
         </ul>
       </div>
     </section>
-    <div class="row" if.bind="status !== viewMap.details">
-      <button class="btn btn-primary flex-center-parent">Add to Cart</button>
+    <section class="card-list" if.bind="status === viewMap.cart">
+      <div class="row" repeat.for="a of cartArticles">
+        <img src.bind="a.image_url" click.trigger="viewDetails(a.id)">
+        <i class="icon size-2 check">
+          <cross click.trigger="removeArticle(a.id)"></cross>
+        </i>
+      </div>
+    </section>
+    <div class="row" if.bind="status === viewMap.cart">
+      <button class="btn btn-primary flex-center-parent" disabled.bind="cartArticles.length === 0" click.trigger="validateCart()">${'shop.validate' & t}</button>
     </div>
   </div>
 </template>

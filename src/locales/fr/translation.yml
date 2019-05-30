@@ -43,6 +43,7 @@ articles:
   loading: Chargement...
   noarticle: Il n'y a pas de nouveaux articles en cours de validation !
   nocategory: Vous devez associer une catégorie au produit avant de le valider !
+  back: Retour
 category:
   title: Créer une nouvelle catégorie
   name: nom
@@ -91,6 +92,10 @@ informations:
   zipcode: Code postal
   phone: Numéro de téléphone
   save: Valider
+shop:
+  title-products: Choisissez vos produits!
+  title-cart: Panier
+  validate: Valider Panier
 error:
   title: Erreur
   defaultMessage: Une erreur de communication s'est produite.
