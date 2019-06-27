@@ -20,7 +20,7 @@ export function configure(aurelia) {
     .feature('resources')
     .plugin(PLATFORM.moduleName('aurelia-validation'))
     .plugin(PLATFORM.moduleName('aurelia-configuration'))
-    .plugin('./plugin/index', () => configureOpenidPlugin(aurelia))
+    .plugin(PLATFORM.moduleName('aurelia-kis-oidc'), () => configureOpenidPlugin(aurelia))
     .plugin(PLATFORM.moduleName('aurelia-i18n'), instance => {
       let aliases = ['t', 'i18n'];
       TCustomAttribute.configureAliases(aliases);

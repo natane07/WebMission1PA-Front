@@ -1,11 +1,13 @@
 import { inject } from 'aurelia-framework';
 import { HttpClient } from 'aurelia-fetch-client';
 import { AureliaConfiguration } from 'aurelia-configuration';
-import { OpenidRouting } from 'plugin/openid-routing';
-import { Oauth2Interceptor } from 'plugin/oauth2-interceptor';
+//import { OpenidRouting } from 'plugin/openid-routing';
+//import {  } from 'plugin/oauth2-interceptor';
 import { APPLICATIONTITLE, SITEMAP, ROUTES } from 'config/app-config';
 import { ErrorInterceptor } from 'core/error-interceptor';
 import { UserSettings } from './models/user-settings';
+
+import { OpenidRouting, Connection, Oauth2Interceptor } from 'aurelia-kis-oidc';
 
 /**
  * Implements the aurelia application for the kis-minutes application.
@@ -16,7 +18,8 @@ import { UserSettings } from './models/user-settings';
   HttpClient,
   Oauth2Interceptor,
   ErrorInterceptor,
-  UserSettings
+  UserSettings,
+  Connection
 )
 export class App {
 
@@ -28,6 +31,7 @@ export class App {
    * @param {Oauth2Interceptor} authInterceptor - the authentication fetch interceptor
    * @param {ErrorInterceptor} errorInterceptor - the error fetch interceptor
    * @param {UserSettings} userSettings - the user options to fetch
+   * @param {Connection} connection - the user options to fetch
    */
   constructor(
     openidRouting,
@@ -35,7 +39,8 @@ export class App {
     client,
     authInterceptor,
     errorInterceptor,
-    userSettings
+    userSettings,
+    connection
   ) {
     this._openidRouting = openidRouting;
     this.httpClient = this.configureHttpClient(
@@ -45,6 +50,7 @@ export class App {
       errorInterceptor
     );
     this.userSettings = userSettings;
+    this.connection = connection;
   }
 
   async activate() {

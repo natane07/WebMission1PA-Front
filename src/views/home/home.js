@@ -1,6 +1,6 @@
 import { inject } from 'aurelia-framework';
 import { Router } from 'aurelia-router';
-import { Connection } from 'plugin/connection';
+import { Connection } from 'aurelia-kis-oidc';
 import { APPLICATIONTITLE, SITEMAP } from 'config/app-config';
 import { UserService } from 'services/user-service';
 
@@ -15,7 +15,7 @@ export class Home {
   }
 
   manage() {
-    this._userService.getUserInfos(this.connection.email).then(res => {
+    this._userService.getUserInfos(this.connection.user.profile.emails[0]).then(res => {
       switch (res.code) {
         case 0:
           return this._router.navigateToRoute(SITEMAP.shop);

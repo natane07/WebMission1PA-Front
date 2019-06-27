@@ -1,5 +1,5 @@
 import { inject } from 'aurelia-framework';
-import { Connection } from 'plugin/connection';
+import { Connection } from 'aurelia-kis-oidc';
 import { UserSettings } from 'models/user-settings';
 import { I18N } from 'aurelia-i18n';
 import { Router } from 'aurelia-router';
