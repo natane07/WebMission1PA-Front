@@ -32,7 +32,7 @@
     "aurelia-validation": "^1.4.0",
     "i18next-xhr-backend": "^2.0.1",
     "izitoast": "^1.4.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "oidc-client": "^1.7.0"
   },
   "description": "The kis-minutes aurelia frontend",
